@@ -1,0 +1,18 @@
+<mat-drawer-container class="mx-auto w-full h-full border-0" autosize [hasBackdrop]="false">
+    <mat-drawer #drawer class="p-0 w-56" mode="push" opened="true">
+      <app-main-menu [drawerPanel]="drawer" ></app-main-menu>
+    </mat-drawer>
+    <mat-drawer-content>
+      <mat-toolbar class="bg-white w-full mx-0 !p-1 h-8 justify-between" >
+        <mat-icon 
+        matRipple 
+        [matRippleRadius]="15"
+        [matRippleUnbounded]="true"
+        [matRippleCentered]="true"
+        (click)="onClicMenu(drawer)">menu</mat-icon>
+      </mat-toolbar>
+      </mat-drawer-content>
+</mat-drawer-container>
+
+
+
