@@ -5,16 +5,15 @@ import { ProjectsDashboardComponent } from './components/projects-dashboard/proj
 
 const routes: Routes = [
   {
-    path: '',
-    component: BodyHomeComponent,
-  },
-  {
     path: 'home',
     component: BodyHomeComponent,
   },
   {
-    path: 'project',
+    path: 'projects',
     component: ProjectsDashboardComponent
+  },
+  {
+    path: '', redirectTo: 'home', pathMatch: 'full'
   },
   {
     path: '**',

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./projects-dashboard.component.css']
 })
 export class ProjectsDashboardComponent implements OnInit {
-
+  public value: string = ' ';
   constructor() { }
 
   ngOnInit(): void {

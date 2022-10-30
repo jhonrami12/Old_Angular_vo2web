@@ -26,9 +26,5 @@ export class MainMenuComponent implements OnInit {
   {
     let action = '/'+nameAction;
     this.router.navigate([action]);
-      
-    console.log('action Menu');
-
   }
-
 }

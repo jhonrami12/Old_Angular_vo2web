@@ -9,6 +9,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatRippleModule} from '@angular/material/core';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input'
 //Import own module
 import {HomeRoutingModule } from './home-routing.module';
 import {HomeComponent } from './home.component';
@@ -38,7 +39,8 @@ import { ProjectsDashboardComponent } from './components/projects-dashboard/proj
     MatRippleModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    MatInputModule
   ],
   exports: [
     HomeComponent
