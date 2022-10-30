@@ -4,10 +4,10 @@
       <div *ngIf="avatar" mat-card-avatar class="{{class}} bg-cover"></div>
       <div>{{display}}</div>
       <div *ngIf="actions">
-        <button mat-button [matMenuTriggerFor]="aboveMenu">
+        <button mat-icon-button [matMenuTriggerFor]="aboveMenu">
           <mat-icon>arrow_drop_down</mat-icon>
         </button>
-        <mat-menu class="bg-transparent text-gray-400" #aboveMenu="matMenu" yPosition="above">
+        <mat-menu class="bg-transparent text-gray-400" #aboveMenu="matMenu" yPosition="above" xPosition="before">
           <button class="text-gray-400 hover:text-gray-100" mat-menu-item>Profile</button>
           <button class="text-gray-400 hover:text-gray-100" mat-menu-item>Logout</button>
         </mat-menu>
