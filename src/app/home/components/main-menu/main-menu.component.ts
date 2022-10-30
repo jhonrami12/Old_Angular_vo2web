@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-menu',
@@ -9,7 +10,7 @@ import { MatDrawer } from '@angular/material/sidenav';
 export class MainMenuComponent implements OnInit {
   @Input() drawerPanel: MatDrawer | undefined;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     
@@ -19,6 +20,15 @@ export class MainMenuComponent implements OnInit {
   {
       if(this.drawerPanel)
         this.drawerPanel.toggle();
+  }
+
+  onClicActMenu(nameAction: string)
+  {
+    let action = '/'+nameAction;
+    this.router.navigate([action]);
+      
+    console.log('action Menu');
+
   }
 
 }

@@ -15,13 +15,17 @@ import {HomeComponent } from './home.component';
 import {SharedModule } from '../shared/shared.module';
 import {MainMenuComponent} from './components/main-menu/main-menu.component';
 import { ButtonMainMenuComponent } from './components/button-main-menu/button-main-menu.component';
+import { BodyHomeComponent } from './components/body-home/body-home.component';
+import { ProjectsDashboardComponent } from './components/projects-dashboard/projects-dashboard.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     MainMenuComponent,
-    ButtonMainMenuComponent
+    ButtonMainMenuComponent,
+    BodyHomeComponent,
+    ProjectsDashboardComponent
   ],
   imports: [
     CommonModule,
