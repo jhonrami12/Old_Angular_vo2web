@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsDashboardComponent implements OnInit {
   public value: string = ' ';
+  public displayOpts: any[] = [
+    {value: 'allRoutes', viewValue: 'All routes'},
+    {value: 'byFolders', viewValue: 'By folder'}
+  ]
+  selected = 'allRoutes';
+
   constructor() { }
 
   ngOnInit(): void {
