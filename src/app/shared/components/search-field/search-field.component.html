@@ -1,0 +1,21 @@
+<div id="searchField" class="flex flex-row relative w-full h-9 pr-2">
+    <span class="absolute left-1 top-2 flex items-center pl-0">
+        <svg class="h-5 w-4 fill-slate-300" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+        </svg>
+    </span>
+    <input type="search"
+        name="search-projects"
+        class="py-2 !pl-5 pr-px rounded-l-xl w-full
+        !border-2 border-slate-200 
+        outline-none !focus:border-0
+        placeholder:italic
+        placeholder:text-slate-400"
+        placeholder="Name or some property of the Project"
+        ngModel
+    />
+    <button class="p-2 border-l-0 border-solid rounded-r-lg w-14
+    outline-none bg-gray-200 duration-300 cursor-pointer 
+    hover:bg-gray-300
+    ">Search</button>
+</div>

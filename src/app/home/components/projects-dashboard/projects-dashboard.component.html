@@ -1,36 +1,18 @@
 <mat-card class="m-4 !p-4">
     <div class="flex justify-between">
         <div id="barDashLeft" class="flex flex-auto">
-            <div id="searchField" class="flex flex-row relative w-1/3 h-9 pr-2">
-                <span class="absolute left-1 top-2 flex items-center pl-0">
-                    <svg class="h-5 w-4 fill-slate-300" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
-                    </svg>
-                </span>
-                <input type="search"
-                    name="search-projects"
-                    class="py-2 !pl-5 pr-px rounded-l-xl basis-4/5
-                    !border-2 border-slate-200 
-                    outline-none !focus:border-0
-                    placeholder:italic
-                    placeholder:text-slate-400"
-                    placeholder="Name or some property of the Project"
-                    ngModel
-                />
-                <button class="p-0 border-l-0 border-solid rounded-r-lg basis-1/5
-                outline-none bg-gray-200 duration-300 cursor-pointer 
-                hover:bg-gray-300
-                ">Search</button>
-            </div>
-            <div id="folderselect" class="flex flex-row relative">
-                <mat-form-field appearance="fill">
-                    <mat-select  name="displayOpts" [(value)]="selected">
-                      <mat-option *ngFor="let opt of displayOpts" [value]="opt.value">
-                        {{opt.viewValue}}
-                      </mat-option>
-                    </mat-select>
-                  </mat-form-field>
-            </div>
+            <app-search-field class="h-9 w-1/3 min-w-fit"></app-search-field>
+            <div id="folderselect" class="flex items-center !h-9"> 
+            <!-- <mat-form-field appearance="fill"> -->
+                <mat-select  name="displayOpts" [(value)]="selected"
+                    class="border-2 !w-24 h-full flex items-center"
+                >
+                    <mat-option *ngFor="let opt of displayOpts" [value]="opt.value">
+                    {{opt.viewValue}}
+                    </mat-option>
+                </mat-select>
+                <!-- </mat-form-field> -->
+        </div> 
         </div>
         <div id="barDahRight" class="flex items-center">
             <button><mat-icon>view_list</mat-icon></button>
