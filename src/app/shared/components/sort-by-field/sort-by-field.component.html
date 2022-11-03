@@ -1,0 +1,11 @@
+<div id="folderselect" class="flex items-center !h-9 !rounded-lg border-2"> 
+    <button mat-button [matMenuTriggerFor]="sortByMenu">
+        Sort by: {{sort}}
+        <!-- <mat-icon>keyboard_arrow_down</mat-icon> -->
+        <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+    <mat-menu #sortByMenu="matMenu">
+        <button mat-menu-item >option 1</button>
+        <button mat-menu-item >option 2</button>
+    </mat-menu>
+</div> 

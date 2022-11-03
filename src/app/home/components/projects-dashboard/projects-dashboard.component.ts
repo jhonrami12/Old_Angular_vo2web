@@ -12,6 +12,7 @@ export class ProjectsDashboardComponent implements OnInit {
     {value: 'byFolders', viewValue: 'By folder'}
   ]
   selected = 'allRoutes';
+  
 
   constructor() { }
 

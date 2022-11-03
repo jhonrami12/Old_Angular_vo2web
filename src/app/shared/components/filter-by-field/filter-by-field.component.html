@@ -1,0 +1,39 @@
+<div class="flex flex-row">
+    <div class="flex items-center pr-1">
+        <button class="bg-gray-200 !rounded-l-xl font-normal !pl-3 !pr-0" mat-button [matMenuTriggerFor]="sortByMenu">
+            Filter by
+            <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+        <mat-menu #sortByMenu="matMenu" yPosition="below">
+            <button mat-menu-item >
+                <mat-icon>translate</mat-icon>
+                <span>Languages</span>
+            </button>
+            <button mat-menu-item >
+                <mat-icon>video_library</mat-icon>
+                <span>Media</span>
+            </button>
+        </mat-menu>
+    </div>
+    <div>
+        <mat-chip-list >
+            <mat-chip>
+                <i matChipAvatar class="material-icons">translate</i>
+                English
+                <mat-icon>close</mat-icon>
+            </mat-chip>
+            <mat-chip color="primary">
+                <img matChipAvatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
+                Dog two
+            </mat-chip>
+            <mat-chip color="accent">
+                <img matChipAvatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
+                Dog three
+            </mat-chip>
+            <mat-chip color="accent">
+                <img matChipAvatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
+                Dog 4
+            </mat-chip>
+        </mat-chip-list>
+    </div>
+</div>
