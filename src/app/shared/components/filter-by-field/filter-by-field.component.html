@@ -11,8 +11,8 @@
                     <span class="text-xs">{{category.display}}</span>
                 </button> 
                 <mat-menu #menuChild="matMenu" class="!min-w-min">
-                    <button *ngFor="let itemChild of category.childs; let i = index" 
-                        mat-menu-item 
+                    <button *ngFor="let itemChild of category.childs" 
+                        mat-menu-item (click)="onSelectNewFilter(category,itemChild)"
                         class="text-base !px-4 !leading-none !h-7">
                         <span class="text-xs">{{itemChild.value}}</span>
                     </button>
@@ -21,25 +21,13 @@
         </mat-menu>
     </div>
     <div>
-        <mat-chip-list >
-            <mat-chip>
-                <i matChipAvatar class="material-icons text-base !mr-1">translate</i>
-                <span class="text-xs">English</span> 
+        <mat-chip-list #chipListFilterBy >
+            <mat-chip *ngFor="let chipSelected of filterSelectedList">
+                <i matChipAvatar class="material-icons text-base !mr-1">{{chipSelected.parentIconName}}</i>
+                <span class="text-xs">{{chipSelected.childDisplay}}</span> 
                 <button matChipRemove class="!ml-1">
                     <mat-icon>cancel</mat-icon>
                 </button>
-            </mat-chip>
-            <mat-chip color="primary">
-                <img matChipAvatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
-                Dog two
-            </mat-chip>
-            <mat-chip color="accent">
-                <img matChipAvatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
-                Dog three
-            </mat-chip>
-            <mat-chip color="accent">
-                <img matChipAvatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
-                Dog 4
             </mat-chip>
         </mat-chip-list>
     </div>
