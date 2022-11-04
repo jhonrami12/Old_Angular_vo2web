@@ -1,26 +1,33 @@
 <div class="flex flex-row">
     <div class="flex items-center pr-1">
-        <button class="bg-gray-200 !rounded-l-xl font-normal !pl-3 !pr-0" mat-button [matMenuTriggerFor]="sortByMenu">
-            Filter by
+        <button class="bg-gray-200 !rounded-l-xl font-normal !pl-3 !pr-0" mat-button [matMenuTriggerFor]="filterByMenu">
+            <span class="text-xs">Filter by</span>
             <mat-icon>arrow_drop_down</mat-icon>
         </button>
-        <mat-menu #sortByMenu="matMenu" yPosition="below">
-            <button mat-menu-item >
-                <mat-icon>translate</mat-icon>
-                <span>Languages</span>
-            </button>
-            <button mat-menu-item >
-                <mat-icon>video_library</mat-icon>
-                <span>Media</span>
-            </button>
+        <mat-menu #filterByMenu="matMenu" yPosition="below">
+            <ng-container *ngFor="let category of dataFilters" class="w-fit">
+                <button  mat-menu-item [matMenuTriggerFor]="menuChild" class="text-base !p-0 !my-0 !h-9 !leading-none">
+                    <mat-icon class="text-base px-1 !ml-0 !mr-1">{{category.iconName}}</mat-icon>
+                    <span class="text-xs">{{category.display}}</span>
+                </button> 
+                <mat-menu #menuChild="matMenu" class="!min-w-min">
+                    <button *ngFor="let itemChild of category.childs; let i = index" 
+                        mat-menu-item 
+                        class="text-base !px-4 !leading-none !h-7">
+                        <span class="text-xs">{{itemChild.value}}</span>
+                    </button>
+                </mat-menu>
+            </ng-container>
         </mat-menu>
     </div>
     <div>
         <mat-chip-list >
             <mat-chip>
-                <i matChipAvatar class="material-icons">translate</i>
-                English
-                <mat-icon>close</mat-icon>
+                <i matChipAvatar class="material-icons text-base !mr-1">translate</i>
+                <span class="text-xs">English</span> 
+                <button matChipRemove class="!ml-1">
+                    <mat-icon>cancel</mat-icon>
+                </button>
             </mat-chip>
             <mat-chip color="primary">
                 <img matChipAvatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
