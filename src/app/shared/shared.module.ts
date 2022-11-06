@@ -10,12 +10,14 @@ import {MatChipsModule} from '@angular/material/chips';
 import { SearchFieldComponent } from './components/search-field/search-field.component';
 import { SortByFieldComponent } from './components/sort-by-field/sort-by-field.component';
 import { FilterByFieldComponent } from './components/filter-by-field/filter-by-field.component';
+import { SimpleAlertComponent } from './components/simple-alert/simple-alert.component';
 
 @NgModule({
   declarations: [
     SearchFieldComponent,
     SortByFieldComponent,
-    FilterByFieldComponent
+    FilterByFieldComponent,
+    SimpleAlertComponent
   ],
   imports: [
     CommonModule,

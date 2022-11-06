@@ -1,14 +1,14 @@
 import { KeyValue } from "@angular/common";
 
 export class FilterDataModel {
+    key: string;
     value: string;
-    display: string;
     iconName: string;
     childs: KeyValue<string,string>[];
 
     constructor(){
-        this.value = "";
-        this.display ="";
+        this.key = "";
+        this.value ="";
         this.iconName = "";
         this.childs = [];
     }

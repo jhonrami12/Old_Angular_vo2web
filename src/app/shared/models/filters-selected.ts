@@ -1,15 +1,15 @@
 export class FiltersSelected {
+    parentKey: string;
     parentValue: string;
-    parentDisplay: string;
     parentIconName: string;
+    childKey: string;
     childValue: string;
-    childDisplay: string;
 
     constructor(){
+        this.parentKey = '';
         this.parentValue = '';
-        this.parentDisplay = '';
         this.parentIconName = '';
+        this.childKey = '';
         this.childValue = '';
-        this.childDisplay = '';
     }
 }

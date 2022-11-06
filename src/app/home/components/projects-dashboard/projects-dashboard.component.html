@@ -2,7 +2,11 @@
     <div class="flex justify-between">
         <div id="barDashLeft" class="flex flex-auto">
             <app-search-field class="h-9 w-1/3 min-w-fit" placeholder="Project name or attribute"></app-search-field>
-            <app-filter-by-field class="h-9 w-2/3 min-w-fit"></app-filter-by-field>
+            <app-filter-by-field [dataFilters]="dataFilters" 
+            (notificationMsg)="processNotification($event)"
+            class="h-9 w-2/3 min-w-fit">
+
+            </app-filter-by-field>
         </div>
         <div id="barDahRight" class="flex items-center">
             <button><mat-icon>view_list</mat-icon></button>
@@ -10,4 +14,5 @@
             <button><mat-icon>view_comfy</mat-icon></button>
         </div>
     </div>
+    
 </mat-card>
