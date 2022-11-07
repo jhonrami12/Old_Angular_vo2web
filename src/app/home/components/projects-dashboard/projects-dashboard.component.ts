@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FilterDataModel } from 'src/app/shared/models/filter-data-model';
 import { NotificationMsgModel } from 'src/app/shared/models/notification-msg-model';
+import { SimpleAlertService } from 'src/app/shared/services/simple-alert.service';
 
 @Component({
   selector: 'app-projects-dashboard',
@@ -17,7 +18,7 @@ export class ProjectsDashboardComponent implements OnInit {
   
   dataFilters: FilterDataModel[];
 
-  constructor() { 
+  constructor(private simpleAlertServ: SimpleAlertService) { 
     this.dataFilters = [
       {
         key: 'languages',
@@ -41,10 +42,12 @@ export class ProjectsDashboardComponent implements OnInit {
 
   }
 
-  processNotification($event: NotificationMsgModel)
+  processNotification(notif: NotificationMsgModel)
   {
+    this.simpleAlertServ.showNotif(notif);
+
     console.log('new Notification');
-    console.log($event);
+    console.log(notif);
   }
 
   ngOnInit(): void {

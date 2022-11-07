@@ -45,7 +45,7 @@ export class FilterByFieldComponent implements OnInit {
       return;
     }
     
-    if(this.filterSelectedList.length >=4)
+    if(this.filterSelectedList.length >=1)
     {
       this.notificationMsg.emit(new NotificationMsgModel('001',TypeMsg.message,'It is not possible to add more than 4 filters'));
       return;

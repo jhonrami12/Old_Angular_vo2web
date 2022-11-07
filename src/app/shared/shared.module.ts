@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-//Angular Material
+//Angular Component Material
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -29,7 +29,8 @@ import { SimpleAlertComponent } from './components/simple-alert/simple-alert.com
   exports:[
     SearchFieldComponent,
     SortByFieldComponent,
-    FilterByFieldComponent
+    FilterByFieldComponent,
+    SimpleAlertComponent
   ]
 })
 export class SharedModule { }
