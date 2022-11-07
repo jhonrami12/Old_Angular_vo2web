@@ -10,7 +10,8 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select'
+import {MatSelectModule} from '@angular/material/select';
+import {MatDividerModule} from '@angular/material/divider';
 //Import own module
 import {HomeRoutingModule } from './home-routing.module';
 import {SharedModule } from '../shared/shared.module';
@@ -43,7 +44,8 @@ import { ProjectsDashboardComponent } from './components/projects-dashboard/proj
     MatCardModule,
     MatMenuModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDividerModule
   ],
   exports: [
     HomeComponent

@@ -1,18 +1,29 @@
-<mat-card class="m-4 !p-4">
+<mat-card class="m-4 !p-4 !mb-0">
     <div class="flex justify-between">
         <div id="barDashLeft" class="flex flex-auto">
             <app-search-field class="h-9 w-1/3 min-w-fit" placeholder="Project name or attribute"></app-search-field>
             <app-filter-by-field [dataFilters]="dataFilters" 
             (onMessages)="processNotification($event)"
             class="h-9 w-2/3 min-w-fit">
-
             </app-filter-by-field>
         </div>
         <div id="barDahRight" class="flex items-center">
             <button><mat-icon>view_list</mat-icon></button>
             <button><mat-icon>view_module</mat-icon></button>
             <button><mat-icon>view_comfy</mat-icon></button>
+            <mat-divider class="!mx-3 w-0.5 h-5 bg-gray-300" [vertical]="true"></mat-divider>
+            <button  class="">
+                <div matRipple class=" w-8"
+                    [matRippleRadius]="23"
+                    [matRippleUnbounded]="true"
+                    [matRippleCentered]="true"
+                >
+                    <img draggable=false class="!select-none" src="./assets/svg/file-add2.svg">
+                </div>
+            </button>
         </div>
     </div>
-    
+</mat-card>  
+<mat-card class="m-4 mt-0.5 !p-2 !border-0 !shadow-none">
+  asdf
 </mat-card>
