@@ -1,9 +1,17 @@
-export class NotificationMsgModel {
+
+export type typeAlert = 'Information'|'Error'|'Success'|'Warning'| 'General';
+
+export class SimpleAlertModel {
+
+
     codeMsg: string;
     typeMsg: string;
     Message: string;
 
-    constructor(code: string = '0', tpm: string = '', msg: string = '')
+    constructor(
+        code: string = '0', 
+        msg: string = '', 
+        tpm:typeAlert = 'General')
     {
         this.codeMsg = code;
         this.typeMsg = tpm;

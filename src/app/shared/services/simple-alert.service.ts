@@ -1,5 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { NotificationMsgModel } from '../models/notification-msg-model';
+import { SimpleAlertModel } from '../models/simple-alert-model';
 
 @Injectable({
   providedIn: 'root'
@@ -8,9 +8,9 @@ export class SimpleAlertService {
 
   constructor() { }
 
-  onShowNofi = new EventEmitter<NotificationMsgModel>();  
+  onShowNofi = new EventEmitter<SimpleAlertModel>();  
 
-  showNotif(notification: NotificationMsgModel)
+  showNotif(notification: SimpleAlertModel)
   {
     this.onShowNofi.emit(notification); 
   }

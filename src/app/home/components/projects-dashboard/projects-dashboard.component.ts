@@ -1,6 +1,7 @@
+import { KeyValue } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FilterDataModel } from 'src/app/shared/models/filter-data-model';
-import { NotificationMsgModel } from 'src/app/shared/models/notification-msg-model';
+import { SimpleAlertModel } from 'src/app/shared/models/simple-alert-model';
 import { SimpleAlertService } from 'src/app/shared/services/simple-alert.service';
 
 @Component({
@@ -42,9 +43,9 @@ export class ProjectsDashboardComponent implements OnInit {
 
   }
 
-  processNotification(notif: NotificationMsgModel)
+  processNotification(notif: KeyValue<string,string>)
   {
-    this.simpleAlertServ.showNotif(notif);
+    this.simpleAlertServ.showNotif(new SimpleAlertModel(notif.key,notif.value,'Warning'));
 
     console.log('new Notification');
     console.log(notif);

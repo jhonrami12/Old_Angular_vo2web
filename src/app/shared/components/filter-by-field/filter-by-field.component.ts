@@ -3,14 +3,7 @@ import { Component, EventEmitter, Input, OnInit, Output, QueryList, ViewChildren
 import { MatMenu, MatMenuPanel } from '@angular/material/menu';
 import { FilterDataModel } from '../../models/filter-data-model';
 import { FiltersSelected } from '../../models/filters-selected';
-import { NotificationMsgModel } from '../../models/notification-msg-model';
 
-enum TypeMsg {
-  message = 'Message',
-  warn = 'Warning',
-  error = 'Error',
-  info = 'Information'
-}
 
 @Component({
   selector: 'app-filter-by-field',
@@ -20,8 +13,8 @@ enum TypeMsg {
 export class FilterByFieldComponent implements OnInit {
   @Input() dataFilters: FilterDataModel[];
   @ViewChildren(MatMenu) components: QueryList<MatMenuPanel<any>> | undefined;
-  @Output() notificationMsg = new EventEmitter<NotificationMsgModel>();
-  @Output() changeFilter = new EventEmitter<FiltersSelected[]>();
+  @Output() onMessages = new EventEmitter<KeyValue<string,string>>();
+  @Output() onChangeFilter = new EventEmitter<FiltersSelected[]>();
   
 
   filterSelectedList: FiltersSelected[];
@@ -41,13 +34,13 @@ export class FilterByFieldComponent implements OnInit {
     {
       //we remove the item selected again.
       this.remove(childSelect.key);
-      this.changeFilter.emit(this.filterSelectedList);
+      this.onChangeFilter.emit(this.filterSelectedList);
       return;
     }
     
-    if(this.filterSelectedList.length >=1)
+    if(this.filterSelectedList.length >=4)
     {
-      this.notificationMsg.emit(new NotificationMsgModel('001',TypeMsg.message,'It is not possible to add more than 4 filters'));
+      this.onMessages.emit( { 'key':'001', 'value': 'It is not possible to add more than 4 filters'} );
       return;
     }
 
@@ -59,7 +52,7 @@ export class FilterByFieldComponent implements OnInit {
     filSelec.childValue = childSelect.value;
 
     this.filterSelectedList.push(filSelec);
-    this.changeFilter.emit(this.filterSelectedList);
+    this.onChangeFilter.emit(this.filterSelectedList);
   }
 
   isChildSelected(child: string)
