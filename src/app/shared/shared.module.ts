@@ -11,13 +11,16 @@ import { SearchFieldComponent } from './components/search-field/search-field.com
 import { SortByFieldComponent } from './components/sort-by-field/sort-by-field.component';
 import { FilterByFieldComponent } from './components/filter-by-field/filter-by-field.component';
 import { SimpleAlertComponent } from './components/simple-alert/simple-alert.component';
+import { KeysPipe } from './pipes/keys.pipe';
+
 
 @NgModule({
   declarations: [
     SearchFieldComponent,
     SortByFieldComponent,
     FilterByFieldComponent,
-    SimpleAlertComponent
+    SimpleAlertComponent,
+    KeysPipe
   ],
   imports: [
     CommonModule,

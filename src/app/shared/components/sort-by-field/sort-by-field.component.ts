@@ -1,15 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { KeyValue } from '@angular/common';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { SortSelectedModel } from '../../models/sort-selected-model';
 
 @Component({
   selector: 'app-sort-by-field',
   templateUrl: './sort-by-field.component.html',
-  styleUrls: ['./sort-by-field.component.css']
+  styleUrls: ['./sort-by-field.component.css'],
 })
 export class SortByFieldComponent implements OnInit {
-  sort = 'Date Asc';
-  constructor() { }
+  sortSelected: SortSelectedModel;
+  @Input() sortByData: KeyValue<string, string>[] | undefined;
+  @Output() onChanceSort = new EventEmitter<SortSelectedModel>();
 
-  ngOnInit(): void {
+  constructor() {
+    this.sortSelected = new SortSelectedModel();
   }
 
+  ngOnInit(): void {}
+
+  procChangeOrd(sortSelected: KeyValue<string, string>) {
+    this.sortSelected.key = sortSelected.key;
+    this.sortSelected.value = sortSelected.value;
+    this.sortSelected.ord = 'asc';
+
+    this.onChanceSort.emit(this.sortSelected);
+  }
 }
