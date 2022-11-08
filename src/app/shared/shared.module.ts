@@ -5,6 +5,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatRippleModule} from '@angular/material/core';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 //Own Components to export
 import { SearchFieldComponent } from './components/search-field/search-field.component';
@@ -27,7 +29,9 @@ import { KeysPipe } from './pipes/keys.pipe';
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
-    MatChipsModule
+    MatChipsModule,
+    MatRippleModule,
+    MatTooltipModule
   ],
   exports:[
     SearchFieldComponent,

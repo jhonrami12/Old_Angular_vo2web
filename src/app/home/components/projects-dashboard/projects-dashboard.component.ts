@@ -21,7 +21,7 @@ export class ProjectsDashboardComponent implements OnInit {
     this.filterSelected = [];
 
     this.sortBy = [
-      { 'key':'nameProj', 'value': 'Name Project'},
+      { 'key':'nameProj', 'value': 'Project name'},
       { 'key':'editedDate', 'value': 'Edition date'},
       { 'key':'creationDate', 'value': 'Creation date'}
     ];
