@@ -1,8 +1,8 @@
 <div class="flex flex-row">
     <div class="flex items-center pr-1">
-        <button class="bg-gray-200 !rounded-l-xl font-normal !pl-3 !pr-0" mat-button [matMenuTriggerFor]="filterByMenu">
-            <span class="text-xs">Filter by</span>
-            <mat-icon>arrow_drop_down</mat-icon>
+        <button class="bg-gray-200 !rounded-l-xl font-normal !pl-0 !pr-0" mat-button [matMenuTriggerFor]="filterByMenu">
+            <!-- <span class="text-xs">Filter by</span> -->
+            <mat-icon >filter_list</mat-icon>
         </button>
         <mat-menu #filterByMenu="matMenu" yPosition="below">
             <ng-container *ngFor="let category of dataFilters" class="w-fit">
