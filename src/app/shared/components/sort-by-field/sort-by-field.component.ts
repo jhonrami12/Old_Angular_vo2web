@@ -9,7 +9,7 @@ import { SortSelectedModel } from '../../models/sort-selected-model';
 })
 export class SortByFieldComponent implements OnInit {
   @Input() sortByData: KeyValue<string, string>[] | undefined;
-  @Output() onChanceSort = new EventEmitter<SortSelectedModel>();
+  @Output() onChangeSort = new EventEmitter<SortSelectedModel>();
 
   sortSelected: SortSelectedModel;
   sortAsc: string;
@@ -31,13 +31,13 @@ export class SortByFieldComponent implements OnInit {
     this.sortSelected.value = sortSelected.value;
     this.sortSelected.ord = this.sortAsc;
 
-    this.onChanceSort.emit(this.sortSelected);
+    this.onChangeSort.emit(this.sortSelected);
   }
 
   procChangeSortDirec(event: any)
   {
     this.sortAsc = this.sortAsc == 'asc' ? 'desc' : 'asc';
     this.sortSelected.ord = this.sortAsc;
-    this.onChanceSort.emit(this.sortSelected);
+    this.onChangeSort.emit(this.sortSelected);
   }
 }

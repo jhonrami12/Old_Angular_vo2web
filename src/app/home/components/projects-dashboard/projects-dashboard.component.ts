@@ -13,21 +13,23 @@ import { SimpleAlertService } from 'src/app/shared/services/simple-alert.service
 })
 export class ProjectsDashboardComponent implements OnInit {
   dataFilters: FilterDataModel[];
-  sortBy: KeyValue<string,string>[];
-  
+  dataSortBy: KeyValue<string, string>[];
+
   filterSelected: FiltersSelected[];
+  currentFolders: string[];
 
   constructor(private simpleAlertServ: SimpleAlertService) {
     this.filterSelected = [];
+    this.currentFolders = ['Project','Algo'];
     this.dataFilters = [];
-    this.sortBy = [];
+    this.dataSortBy = [];
   }
 
   ngOnInit(): void {
-    this.sortBy = [
-      { 'key':'nameProj', 'value': 'Project name'},
-      { 'key':'editedDate', 'value': 'Edition date'},
-      { 'key':'creationDate', 'value': 'Creation date'}
+    this.dataSortBy = [
+      { key: 'nameProj', value: 'Project name' },
+      { key: 'editedDate', value: 'Edition date' },
+      { key: 'creationDate', value: 'Creation date' },
     ];
 
     this.dataFilters = [
@@ -65,10 +67,11 @@ export class ProjectsDashboardComponent implements OnInit {
     console.log(filSelected);
   }
 
-  procChangeSort(sortSel: SortSelectedModel)
-  {
+  procChangeSort(sortSel: SortSelectedModel) {
     console.log(sortSel);
   }
 
-  
+  procChangeShow(showView: string) {
+    console.log(showView);
+  }
 }

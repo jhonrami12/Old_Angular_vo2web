@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./show-by-field.component.css'],
 })
 export class ShowByFieldComponent implements OnInit {
-  @Output() onChanceShow = new EventEmitter<string>();
+  @Output() onChangeShow = new EventEmitter<string>();
 
   showSelected: string;
 
@@ -22,6 +22,6 @@ export class ShowByFieldComponent implements OnInit {
 
   procChangeShow(sortSelected: string) {
     this.showSelected = sortSelected == 'folder' ? 'files' : 'folder';
-    // this.onChanceSort.emit(this.sortSelected);
+    this.onChangeShow.emit(this.showSelected);
   }
 }

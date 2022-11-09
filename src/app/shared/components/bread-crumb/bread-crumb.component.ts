@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-bread-crumb',
@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BreadCrumbComponent implements OnInit {
 
-  constructor() { }
+  @Input() folders: string[];
+
+  constructor() { 
+    this.folders = [];
+    this.folders = ['Project','English','Preacher'];
+  }
 
   ngOnInit(): void {
   }

@@ -5,17 +5,13 @@
           <mat-icon class="text-base" >home</mat-icon> 
         </a>
       </li>
-      <li class="!ml-0">
+      <li *ngFor="let folder of folders; last as isLast" class="!ml-0 pr-2">
         <div class="flex items-center">
           <span>/</span>
-          <a href="#" class="ml-1 text-xs italic font-medium text-gray-700
-           hover:text-gray-900 md:ml-2 dark:text-gray-400 dark:hover:text-white">Projects</a>
-        </div>
-      </li>
-      <li aria-current="page">
-        <div class="flex items-center">
-            <span>/</span>
-          <span class="ml-1 text-xs italic font-medium text-gray-500 md:ml-2 dark:text-gray-400">Flowbite</span>
+          <a *ngIf="!isLast" href="/projects/" class="ml-1 text-xs italic font-medium
+           text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+           >{{folder}}</a>
+           <span class="ml-1 text-xs italic font-medium text-gray-500 md:ml-2 dark:text-gray-400" *ngIf="isLast">{{folder}}</span>
         </div>
       </li>
     </ol>
