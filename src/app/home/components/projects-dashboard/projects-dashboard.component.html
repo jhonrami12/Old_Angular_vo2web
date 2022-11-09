@@ -1,13 +1,13 @@
 <mat-card class="m-4 !pt-2 !p-4 !mb-0 min-h-fit">
     <div class="flex justify-between">
-        <div id="barDashLeft" class="grid grid-flow-row md:grid-flow-col auto-cols-auto w-full">
-            <app-search-field class=" min-w-fit pt-2" placeholder="Project name or attribute"></app-search-field>
+        <div id="barDashLeft" class="w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+            <app-search-field class="min-w-fit pt-2" placeholder="Project name or attribute"></app-search-field>
             <app-filter-by-field [dataFilters]="dataFilters" 
                     (onMessages)="processNotification($event)"
                     (onChangeFilter)="procChangFilter($event)"
                     class="w-2/3 min-w-fit pt-2">
             </app-filter-by-field>
-            <!-- <app-show-by-field></app-show-by-field> -->
+            <!-- <app-show-by-field [showByData]="showByData" class="min-w-fit pt-2"></app-show-by-field> -->
         </div>
         <div id="barDahRight" class="flex items-center h-max">
             <button class="pt-2"><mat-icon>view_list</mat-icon></button>
@@ -27,8 +27,11 @@
 </mat-card>  
 <mat-card class="m-4 mt-0.5 !p-2 !border-0 !shadow-none">
     <div class="flex justify-between">
-        <div id="optRight">asd</div>
         <div id="optLeft">
+            <app-bread-crumb></app-bread-crumb>
+        </div>
+        <div id="optRight" class="flex items-center h-max">
+            <app-show-by-field></app-show-by-field>
             <app-sort-by-field [sortByData]="sortBy" (onChanceSort)="procChangeSort($event)" ></app-sort-by-field>
         </div>
     </div>

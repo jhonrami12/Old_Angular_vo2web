@@ -15,6 +15,7 @@ import { FilterByFieldComponent } from './components/filter-by-field/filter-by-f
 import { SimpleAlertComponent } from './components/simple-alert/simple-alert.component';
 import { KeysPipe } from './pipes/keys.pipe';
 import { ShowByFieldComponent } from './components/show-by-field/show-by-field.component';
+import { BreadCrumbComponent } from './components/bread-crumb/bread-crumb.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ShowByFieldComponent } from './components/show-by-field/show-by-field.c
     FilterByFieldComponent,
     SimpleAlertComponent,
     KeysPipe,
-    ShowByFieldComponent
+    ShowByFieldComponent,
+    BreadCrumbComponent
   ],
   imports: [
     CommonModule,
@@ -40,7 +42,8 @@ import { ShowByFieldComponent } from './components/show-by-field/show-by-field.c
     SortByFieldComponent,
     FilterByFieldComponent,
     SimpleAlertComponent,
-    ShowByFieldComponent
+    ShowByFieldComponent,
+    BreadCrumbComponent
   ]
 })
 export class SharedModule { }

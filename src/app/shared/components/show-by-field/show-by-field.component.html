@@ -1,1 +1,9 @@
-<p>show-by-field works!</p>
+<button  class="pr-2" (click)="procChangeShow(showSelected)" >
+    <div matRipple 
+        [matRippleRadius]="23"
+        [matRippleUnbounded]="true"
+        [matRippleCentered]="true">
+        <img *ngIf="showSelected == 'folder'" width="22" draggable=false class="!select-none !m-0" src="./assets/svg/by-files-02.svg">
+        <img *ngIf="showSelected == 'files'" width="22" draggable=false class="!select-none !m-0" src="./assets/svg/by-folder-02.svg">
+    </div>
+</button>
