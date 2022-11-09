@@ -7,12 +7,9 @@
                     (onChangeFilter)="procChangFilter($event)"
                     class="w-2/3 min-w-fit pt-2">
             </app-filter-by-field>
-            <!-- <app-show-by-field [showByData]="showByData" class="min-w-fit pt-2"></app-show-by-field> -->
         </div>
         <div id="barDahRight" class="flex items-center h-max">
-            <button class="pt-2"><mat-icon>view_list</mat-icon></button>
-            <button class="pt-2"><mat-icon>view_module</mat-icon></button>
-            <button class="pt-2"><mat-icon>view_comfy</mat-icon></button>
+            <app-view-grid></app-view-grid>
             <mat-divider class="!mx-3 w-0.5 h-5 bg-gray-300 pt-2" [vertical]="true"></mat-divider>
             <button  class="hover:animate-bounce pt-2">
                 <div matRipple class=" w-8"
