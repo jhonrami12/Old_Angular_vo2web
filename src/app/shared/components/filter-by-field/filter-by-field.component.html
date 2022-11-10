@@ -32,7 +32,7 @@
             <mat-chip *ngFor="let chipSelected of filterSelectedList"
                         (removed)="remove(chipSelected.childKey)">
                 <i matChipAvatar class="material-icons text-base !mr-1">{{chipSelected.parentIconName}}</i>
-                <span class="text-xs">{{chipSelected.childValue}}</span> 
+                <span class="!text-xs">{{chipSelected.childValue}}</span> 
                 <button matChipRemove class="!ml-1">
                     <mat-icon>cancel</mat-icon>
                 </button>
