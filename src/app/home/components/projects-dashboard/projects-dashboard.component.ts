@@ -16,11 +16,19 @@ export class ProjectsDashboardComponent implements OnInit {
   dataSortBy: KeyValue<string, string>[];
 
   filterSelected: FiltersSelected[];
+  sortSelected: SortSelectedModel;
+  showBySelected: string;
+  viewGridSelected: string;
+
   currentFolders: string[];
 
   constructor(private simpleAlertServ: SimpleAlertService) {
     this.filterSelected = [];
-    this.currentFolders = ['Project','Algo'];
+    this.sortSelected = new SortSelectedModel();
+    this.showBySelected = 'folder';
+    this.viewGridSelected = 'grid';
+
+    this.currentFolders = ['Project', 'Algo'];
     this.dataFilters = [];
     this.dataSortBy = [];
   }
@@ -68,10 +76,17 @@ export class ProjectsDashboardComponent implements OnInit {
   }
 
   procChangeSort(sortSel: SortSelectedModel) {
+    this.sortSelected = sortSel;
     console.log(sortSel);
   }
 
   procChangeShow(showView: string) {
+    this.showBySelected = showView;
     console.log(showView);
+  }
+
+  procChangeView(viewCurr: string) {
+    this.viewGridSelected = viewCurr;
+    console.log('view current:' + viewCurr);
   }
 }

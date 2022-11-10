@@ -2,34 +2,42 @@
     <div class="flex justify-between">
         <div id="barDashLeft" class="w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
             <app-search-field class="min-w-fit pt-2" placeholder="Project name or attribute"></app-search-field>
-            <app-filter-by-field [dataFilters]="dataFilters" 
-                    (onMessages)="processNotification($event)"
-                    (onChangeFilter)="procChangFilter($event)"
-                    class="w-2/3 min-w-fit pt-2">
+            <app-filter-by-field [dataFilters]="dataFilters" (onMessages)="processNotification($event)"
+                (onChangeFilter)="procChangFilter($event)" class=" pt-2">
             </app-filter-by-field>
         </div>
         <div id="barDahRight" class="flex items-center h-max">
-            <app-view-grid></app-view-grid>
+            <app-view-grid (onChangeView)="procChangeView($event)"></app-view-grid>
             <mat-divider class="!mx-3 w-0.5 h-5 bg-gray-300 pt-2" [vertical]="true"></mat-divider>
-            <button  class="hover:animate-bounce pt-2">
-                <div matRipple class=" w-8"
-                    [matRippleRadius]="23"
-                    [matRippleUnbounded]="true"
+            <button class="hover:animate-bounce pt-2">
+                <div matRipple class="w-8" [matRippleRadius]="23" [matRippleUnbounded]="true"
                     [matRippleCentered]="true">
                     <img draggable=false class="!select-none" src="./assets/svg/file-add2.svg">
                 </div>
             </button>
         </div>
     </div>
-</mat-card>  
+</mat-card>
 <mat-card class="m-4 mt-0.5 !p-2 !border-0 !shadow-none">
     <div class="flex justify-between flex-col sm:flex-row lg:flex-row">
         <div id="optLeft" class="flex flex-row">
-            <app-show-by-field (onChangeShow)="procChangeShow($event)" ></app-show-by-field>
+            <app-show-by-field (onChangeShow)="procChangeShow($event)"></app-show-by-field>
             <app-bread-crumb [folders]="currentFolders"></app-bread-crumb>
         </div>
         <div id="optRight" class="flex items-center h-max">
-            <app-sort-by-field [sortByData]="dataSortBy" (onChangeSort)="procChangeSort($event)" ></app-sort-by-field>
+            <app-sort-by-field [sortByData]="dataSortBy" (onChangeSort)="procChangeSort($event)"></app-sort-by-field>
         </div>
     </div>
+</mat-card>
+<mat-card class="m-4 mt-0.5 !p-2 h-[calc(100vh_-_280px)] md:h-[calc(100vh_-_230px)]  !border-0 !shadow-none !overflow-y-scroll ">
+    <ng-container *ngIf="viewGridSelected == 'row'">
+        <div class="grid grid-cols-1 gap-4 overflow-auto">
+            <app-project-item-list *ngFor="let item of [1,2,3,4,5,6,7,8,9,10]"></app-project-item-list>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="viewGridSelected == 'grid'">
+        <div class="flex flex-auto overflow-auto">
+            <app-project-item-card *ngFor="let item of [1,2,3,4,5,6,7,8,9,10]" class="w-32 !min-w-max"></app-project-item-card>
+        </div>
+    </ng-container>
 </mat-card>
