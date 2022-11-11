@@ -8,8 +8,8 @@
         </app-filter-by-field>
         <div id="barDahRight" class="col-span-1 flex !place-content-end h-max ">
             <app-view-grid (onChangeView)="procChangeView($event)"></app-view-grid>
-            <mat-divider class="flex !mx-1 !py-4 bg-gray-300 pt-2" [vertical]="true"></mat-divider>
-            <button class="hover:animate-bounce pt-2">
+            <mat-divider class="flex !mx-1.5 !py-4 bg-gray-300 " [vertical]="true"></mat-divider>
+            <button class="hover:animate-bounce pt-2 !px-0">
                 <div matRipple class="w-8" [matRippleRadius]="23" [matRippleUnbounded]="true" [matRippleCentered]="true">
                     <img draggable=false class="!select-none" src="./assets/svg/file-add2.svg">
                 </div>
@@ -31,11 +31,13 @@
 <mat-card class="m-4 mt-0.5 !p-2 h-[calc(100vh_-_280px)] lg:h-[calc(100vh_-_230px)]  !border-0 !shadow-none !overflow-y-scroll ">
     <ng-container *ngIf="viewGridSelected == 'row'">
         <div class="grid grid-cols-1 gap-4 overflow-auto">
+            row:
             <app-project-item-list *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,5,6,7,8,9,10,10,5,6,7,8,9,10]"></app-project-item-list>
         </div>
     </ng-container>
     <ng-container *ngIf="viewGridSelected == 'grid'">
         <div class="flex flex-auto overflow-auto">
+            grid: &nbsp;
             <app-project-item-card *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,5,6,7,8,9,10,10,5,6,7,8,9,10]" class="w-32 !min-w-max"></app-project-item-card>
         </div>
     </ng-container>

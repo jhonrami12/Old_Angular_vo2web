@@ -1,4 +1,5 @@
 import { KeyValue } from '@angular/common';
+import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 import { Component, EventEmitter, Input, OnInit, Output, QueryList, ViewChildren } from '@angular/core';
 import { MatMenu, MatMenuPanel } from '@angular/material/menu';
 import { FilterDataModel } from '../../models/filter-data-model';
@@ -18,13 +19,35 @@ export class FilterByFieldComponent implements OnInit {
   
 
   filterSelectedList: FiltersSelected[];
+  limitFilter: number;
 
-  constructor() { 
+  constructor(private responsive: BreakpointObserver) { 
     this.dataFilters = [];
     this.filterSelectedList = [];
+    this.limitFilter = 4;
   };
 
   ngOnInit(): void {
+    
+    this.responsive.observe(Breakpoints.XSmall)
+      .subscribe(result => {
+
+        if (result.matches) {
+          this.limitFilter = 2;
+          let hasChanges = false;
+          while(this.filterSelectedList.length > this.limitFilter)
+          {
+            this.filterSelectedList.pop();
+            hasChanges = true;
+          }
+          if(hasChanges)
+            this.onChangeFilter.emit(this.filterSelectedList);
+        }
+        else{
+          this.limitFilter = 4;
+        }
+    });
+    
   }
 
   onSelectNewFilter(category: FilterDataModel, childSelect: KeyValue<string,string>)
@@ -38,9 +61,9 @@ export class FilterByFieldComponent implements OnInit {
       return;
     }
     
-    if(this.filterSelectedList.length >=4)
+    if(this.filterSelectedList.length >= this.limitFilter)
     {
-      this.onMessages.emit( { 'key':'001', 'value': 'It is not possible to add more than 4 filters'} );
+      this.onMessages.emit( { 'key':'001', 'value': `It is not possible to add more than ${this.limitFilter} filters`} );
       return;
     }
 
