@@ -1,1 +1,54 @@
-<p>project-item-card works!</p>
+<ng-container *ngIf="projectItem.typeItem == 'folder'">
+    <img draggable=false class="!select-none w-36 transparent !p-0" src="./assets/svg/folder-project-item.svg">
+    <div class="relative transparent !p-0">
+        <div class="absolute left-1 -top-24 px-2 w-28 truncate whitespace-normal">
+            <button>
+                <p class="text-amber-800 font-medium text-sm">{{projectItem.nameProjectItem}}</p>
+            </button>
+        </div>
+        <div class="absolute right-0 -top-10 px-2 items-center">
+            <button mat-button [matMenuTriggerFor]="menu" class="!w-5 !h-5 !min-w-min !p-0 !m-0 !text-sm 
+             !text-black !hover:text-white   !rounded-full
+            hover:bg-yellow-600 dark:bg-yellow-200 dark:hover:bg-yellow-100  ">...</button>
+        </div>
+        <mat-menu #menu="matMenu" class="!min-w-min bg-yellow-100">
+            <button class="text-xs !px-3 !my-0 !h-7 !leading-none" mat-menu-item>Open</button>
+            <button class="text-xs !px-3 !my-0 !h-7 !leading-none" mat-menu-item>Rename</button>
+            <button class="text-xs !px-3 !my-0 !h-7 !leading-none" mat-menu-item>Delete</button>
+        </mat-menu>
+    </div>
+</ng-container>
+
+<div *ngIf="projectItem.typeItem == 'item'" class="w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+
+    <img  class="object-cover object-center w-full h-36"
+        src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+        alt="avatar">
+
+    <div class="flex items-center px-6 py-1 bg-gray-900">
+        <p class="mx-3 !my-0 text-sm text-white">{{projectItem.nameProjectItem}}</p>
+    </div>
+
+    <div class="px-6 py-1">
+        <div class="flex items-center mt-1 text-gray-700 dark:text-gray-200">
+            <mat-icon class="text-lg !h-full">translate</mat-icon>
+            <p class="px-2 !my-0 ">English To Spanish</p>
+        </div>
+
+        <div class="flex items-center mt-1 text-gray-700 dark:text-gray-200">
+            <mat-icon class="text-lg !h-full">video_library</mat-icon>
+            <p class="px-2 !my-0 ">Video</p>
+        </div>
+
+        <div class="flex items-center mt-1 text-gray-700 dark:text-gray-200">
+            <mat-icon class="text-lg !h-full">extension</mat-icon>
+            <p class="px-2 !my-0">Transcribe / Translate / Dubbling </p>
+        </div>
+    </div>
+    <div class="pb-1">
+        <div class="px-6 flex flex-row justify-end">
+            <button
+                class="w-8 px-1 py-1 text-xs font-bold text-white uppercase transition-colors duration-300 transform bg-gray-400 rounded dark:bg-gray-700 hover:bg-gray-500 dark:hover:bg-gray-600 focus:outline-none ">...</button>
+        </div>
+    </div>
+</div>

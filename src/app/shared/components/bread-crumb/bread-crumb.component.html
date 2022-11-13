@@ -1,18 +1,21 @@
 <nav class="flex" aria-label="Breadcrumb">
-    <ol class="inline-flex items-center space-x-1 md:space-x-3">
-      <li class="inline-flex items-center">
-        <a href="/projects" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
-          <mat-icon class="text-base" >home</mat-icon> 
-        </a>
-      </li>
+  <ol class="inline-flex items-center space-x-1 md:space-x-3">
+    <li class="inline-flex items-center">
+      <a href="/projects"
+        class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
+        <mat-icon class="text-base">home</mat-icon>
+      </a>
+    </li>
+    <ng-container *ngIf="showBreadCrumb">
       <li *ngFor="let folder of folders; last as isLast" class="!ml-0 pr-2">
         <div class="flex items-center">
           <span>/</span>
           <a *ngIf="!isLast" href="/projects/" class="ml-1 text-xs italic font-medium
-           text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-           >{{folder}}</a>
-           <span class="ml-1 text-xs italic font-medium text-gray-500 md:ml-2 dark:text-gray-400" *ngIf="isLast">{{folder}}</span>
+            text-gray-700 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">{{folder}}</a>
+          <span class="ml-1 text-xs italic font-medium text-gray-500 md:ml-2 dark:text-gray-400"
+            *ngIf="isLast">{{folder}}</span>
         </div>
       </li>
-    </ol>
-  </nav>
+    </ng-container>
+  </ol>
+</nav>
