@@ -19,6 +19,7 @@ export class ProjectsDashboardComponent implements OnInit {
   dataProjectItem: ProjectItem[] = [];
   _originalDataPrItem:ProjectItem[] = [];
 
+  newSearchEntered: string;
   filterSelected: FiltersSelected[];
   sortSelected: SortSelectedModel;
   showBySelected: string;
@@ -217,6 +218,17 @@ export class ProjectsDashboardComponent implements OnInit {
   }
 
   /**
+   * Method to process the action when the user enter a new world in the field
+   * @param newSearch New search
+   */
+  procSearchField(newSearch: string)
+  {
+    this.newSearchEntered = newSearch;
+    this.appyFilter();
+    //console.log('newSearch:'+newSearch);
+  }
+
+  /**
    * Method that it is executed when change the filter in the dashboard.
    * @param filSelected list of Filter selected
    */
@@ -245,8 +257,7 @@ export class ProjectsDashboardComponent implements OnInit {
     if(this.showBySelected == 'files')
         this.currentFolders = [];
 
-    this.appyFilter();
-    // console.log(showView);
+    this.appyFilter();    
   }
 
   /**
@@ -287,7 +298,6 @@ export class ProjectsDashboardComponent implements OnInit {
    */
   procBreadCrumbBack(positionBack: number)
   {
-    console.log('positionBack:'+positionBack);
     if (positionBack == -1)
       this.currentFolders = [];
 
@@ -305,6 +315,7 @@ export class ProjectsDashboardComponent implements OnInit {
     
     //Filters
     this.applyFilterByFolder();
+    this.applyFilterBySearchField();
     this.applyFilterByFilComp();
 
     //Order by
@@ -313,11 +324,23 @@ export class ProjectsDashboardComponent implements OnInit {
   }
 
   /**
+   * Method to apply filter when user entered a new word in the field
+   */
+  applyFilterBySearchField()
+  {
+    if(!this.newSearchEntered || this.newSearchEntered == '' )
+      return;
+      
+     this.dataProjectItem = this.dataProjectItem.filter(el => el.typeItem == 'folder' || el.nameProjectItem.toLowerCase().includes(this.newSearchEntered.toLowerCase())); 
+    
+  }
+  
+
+  /**
    * Method to apply the filter base on what was selected in the filter-by-field component
    */
   applyFilterByFilComp()
   {
-    // this.filterSelected
     this.dataProjectItem = this.dataProjectItem.filter(el =>  
       el.typeItem == 'folder' ||  
       this.filterSelected.every((currV) => {

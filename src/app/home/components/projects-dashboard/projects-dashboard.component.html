@@ -1,6 +1,9 @@
 <mat-card class="m-4 !pt-2 !p-4 !mb-0 min-h-fit">
     <div class="grid grid-flow-row-dense grid-cols-4 md:flex md:flex-row">
-        <app-search-field class="col-span-3 min-w-fit md:w-5/12 pt-2" placeholder="Project name or attribute"></app-search-field>
+        <app-search-field (onSearch)="procSearchField($event)"
+            class="col-span-3 min-w-fit md:w-5/12 pt-2" 
+            placeholder="Project name">
+        </app-search-field>
         <app-filter-by-field class="col-span-4 md:w-7/12 pt-2" 
                 [dataFilters]="dataFilters" 
                 (onMessages)="procNotification($event)"
