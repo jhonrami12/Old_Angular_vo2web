@@ -15,7 +15,9 @@ import { ProjectItem } from '../../models/project-item';
 export class ProjectsDashboardComponent implements OnInit {
   dataFilters: FilterDataModel[] = [];
   dataSortBy: KeyValue<string, string>[] = [];
+  
   dataProjectItem: ProjectItem[] = [];
+  _originalDataPrItem:ProjectItem[] = [];
 
   filterSelected: FiltersSelected[];
   sortSelected: SortSelectedModel;
@@ -29,15 +31,15 @@ export class ProjectsDashboardComponent implements OnInit {
     this.sortSelected = new SortSelectedModel();
     this.showBySelected = 'folder';
     this.viewGridSelected = 'grid';
-    this.currentFolders = ['Project', 'Algo'];
+    this.currentFolders = [];
   }
 
   ngOnInit(): void {
     //Data to populate de sort-field, this data should obtain from services
     this.dataSortBy = [
-      { key: 'nameProj', value: 'Project name' },
-      { key: 'editedDate', value: 'Edition date' },
-      { key: 'creationDate', value: 'Creation date' },
+      { key: '_nameProj', value: 'Project name' },
+      { key: '_editedDate', value: 'Edition date' },
+      { key: '_creationDate', value: 'Creation date' },
     ];
 
     //Data to populate the filter-field this data should obtain from services
@@ -115,10 +117,10 @@ export class ProjectsDashboardComponent implements OnInit {
         imgCover: '/assets/img/dataDemo/Portada01.jpg',
         nameProjectItem: 'Predica Irish Church',
         path: 'Predicas',
-        originalLanguaje: 'english',
-        targetLanguaje: 'spanish',
-        media: 'video',
-        features: ['transcribe', 'translate'],
+        originalLanguaje: '_english',
+        targetLanguaje: '_spanish',
+        media: '_audio',
+        features: ['_transcribe', '_translate'],
       },
       {
         id: 5,
@@ -126,10 +128,10 @@ export class ProjectsDashboardComponent implements OnInit {
         imgCover: '/assets/img/dataDemo/Portada02.jpg',
         nameProjectItem: 'Damer Part02',
         path: 'Predicas',
-        originalLanguaje: 'english',
-        targetLanguaje: 'french',
-        media: 'video',
-        features: ['transcribe', 'translate', 'dubbling'],
+        originalLanguaje: '_english',
+        targetLanguaje: '_french',
+        media: '_video',
+        features: ['_transcribe', '_translate', '_dubbling'],
       },
       {
         id: 6,
@@ -137,10 +139,10 @@ export class ProjectsDashboardComponent implements OnInit {
         imgCover: '/assets/img/dataDemo/Portada03.jpg',
         nameProjectItem: 'The Christian Context For Samson',
         path: 'Predicas',
-        originalLanguaje: 'english',
-        targetLanguaje: 'italian',
-        media: 'video',
-        features: ['transcribe', 'translate', 'dubbling'],
+        originalLanguaje: '_english',
+        targetLanguaje: '_italian',
+        media: '_video',
+        features: ['_transcribe', '_translate', '_dubbling'],
       },
       {
         id: 7,
@@ -148,10 +150,10 @@ export class ProjectsDashboardComponent implements OnInit {
         imgCover: '/assets/img/dataDemo/Portada04.jpg',
         nameProjectItem: 'The christ of the covenant',
         path: 'Predicas',
-        originalLanguaje: 'english',
-        targetLanguaje: 'italian',
-        media: 'video',
-        features: ['transcribe', 'translate', 'dubbling'],
+        originalLanguaje: '_english',
+        targetLanguaje: '_italian',
+        media: '_video',
+        features: ['_transcribe', '_translate', '_dubbling'],
       },
       {
         id: 8,
@@ -159,10 +161,10 @@ export class ProjectsDashboardComponent implements OnInit {
         imgCover: '/assets/img/dataDemo/Portada05.jpg',
         nameProjectItem: 'Affectionaty Crhistianity',
         path: '',
-        originalLanguaje: 'english',
-        targetLanguaje: 'spanish',
-        media: 'video',
-        features: ['transcribe', 'translate'],
+        originalLanguaje: '_english',
+        targetLanguaje: '_spanish',
+        media: '_video',
+        features: ['_transcribe', '_translate'],
       },
       {
         id: 9,
@@ -170,19 +172,23 @@ export class ProjectsDashboardComponent implements OnInit {
         imgCover: '/assets/img/dataDemo/Portada06.jpg',
         nameProjectItem: 'Rise of Liberalism',
         path: 'Predicas/Apologia',
-        originalLanguaje: 'english',
-        targetLanguaje: 'french',
-        media: 'video',
-        features: ['transcribe']
+        originalLanguaje: '_english',
+        targetLanguaje: '_french',
+        media: '_video',
+        features: ['_transcribe']
       },
     ];
+
+    this._originalDataPrItem = this.dataProjectItem;
+
+    this.appyFilter();
   }
 
   /**
    * Methos that process a new Notification
    * @param notif Notification
    */
-  processNotification(notif: KeyValue<string, string>): void {
+   procNotification(notif: KeyValue<string, string>): void {
     this.simpleAlertServ.showNotif(
       new SimpleAlertModel(notif.key, notif.value, 'Warning')
     );
@@ -223,4 +229,49 @@ export class ProjectsDashboardComponent implements OnInit {
     this.viewGridSelected = viewCurr;
     console.log('view current:' + viewCurr);
   }
+
+  /**
+   * Method to process the action ovder the folder
+   * @param actionFolder action over the folder
+   */
+  procFolderAction(actionFolder: KeyValue<string,ProjectItem>)
+  {
+    if(actionFolder.key == '_open')
+    {
+      this.currentFolders.push(actionFolder.value.nameProjectItem);
+      this.appyFilter();
+    }
+    console.log(actionFolder);
+  }
+  
+  /**
+   * Method to process the action ovder the folder
+   * @param actionItemPro Action over the itemProces
+   */
+  proItemProjAction(actionItemPro: KeyValue<string,ProjectItem>)
+  {
+    console.log(actionItemPro);
+  }
+
+  /**
+   * Method to apply el filter according to de criterias selected
+   */
+  appyFilter()
+  {
+    this.dataProjectItem = this._originalDataPrItem;
+    
+    this.applyFilterByFolder();
+    
+
+  }
+
+  applyFilterByFolder()
+  {
+    if(this.showBySelected != 'folder')
+      return;
+    
+    let allPath = this.currentFolders.toString().replace(',','/');
+    this.dataProjectItem = this.dataProjectItem.filter(el => el.path == allPath);
+  }
+
 }

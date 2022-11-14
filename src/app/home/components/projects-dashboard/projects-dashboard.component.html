@@ -3,7 +3,7 @@
         <app-search-field class="col-span-3 min-w-fit md:w-5/12 pt-2" placeholder="Project name or attribute"></app-search-field>
         <app-filter-by-field class="col-span-4 md:w-7/12 pt-2" 
                 [dataFilters]="dataFilters" 
-                (onMessages)="processNotification($event)"
+                (onMessages)="procNotification($event)"
                 (onChangeFilter)="procChangFilter($event)" >
         </app-filter-by-field>
         <div id="barDahRight" class="col-span-1 flex !place-content-end h-max ">
@@ -38,7 +38,11 @@
     <ng-container *ngIf="viewGridSelected == 'grid'">
         <div class="grid grid-cols-1 gap-7 justify-center justify-items-center sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 ">
             <app-project-item-card *ngFor="let item of dataProjectItem"
-             [projectItem]="item" class=""></app-project-item-card>
+             [projectItem]="item" 
+             (onFolderAction)="procFolderAction($event)"
+             (onItemProjAction)="proItemProjAction($event)"
+             class="">
+            </app-project-item-card>
         </div>
     </ng-container>
 </mat-card>
