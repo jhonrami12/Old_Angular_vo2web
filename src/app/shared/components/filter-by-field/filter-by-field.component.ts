@@ -56,8 +56,7 @@ export class FilterByFieldComponent implements OnInit {
     if(this.filterSelectedList.findIndex(el => el.childKey == childSelect.key) >=0)
     {
       //we remove the item selected again.
-      this.remove(childSelect.key);
-      this.onChangeFilter.emit(this.filterSelectedList);
+      this.remove(childSelect.key);      
       return;
     }
     
@@ -88,6 +87,7 @@ export class FilterByFieldComponent implements OnInit {
 
     if (index >= 0) {
       this.filterSelectedList.splice(index, 1);
+      this.onChangeFilter.emit(this.filterSelectedList);
     }
   }
 

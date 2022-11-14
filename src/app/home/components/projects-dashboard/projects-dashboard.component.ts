@@ -45,33 +45,33 @@ export class ProjectsDashboardComponent implements OnInit {
     //Data to populate the filter-field this data should obtain from services
     this.dataFilters = [
       {
-        key: 'languages',
+        key: '_languages',
         value: 'languages',
         iconName: 'translate',
         childs: [
-          { key: 'english', value: 'English' },
-          { key: 'spanish', value: 'Spanish' },
-          { key: 'italian', value: 'Italian' },
-          { key: 'french', value: 'French' },
+          { key: '_english', value: 'English' },
+          { key: '_spanish', value: 'Spanish' },
+          { key: '_italian', value: 'Italian' },
+          { key: '_french', value: 'French' },
         ],
       },
       {
-        key: 'media',
+        key: '_media',
         value: 'Media',
         iconName: 'video_library',
         childs: [
-          { key: 'audio', value: 'Audio' },
-          { key: 'video', value: 'Video' },
+          { key: '_audio', value: 'Audio' },
+          { key: '_video', value: 'Video' },
         ],
       },
       {
-        key: 'features',
+        key: '_features',
         value: 'Features',
         iconName: 'extension',
         childs: [
-          { key: 'transcribe', value: 'Transcribe' },
-          { key: 'translate', value: 'Translate' },
-          { key: 'dubbling', value: 'Dubbling' },
+          { key: '_transcribe', value: 'Transcribe' },
+          { key: '_translate', value: 'Translate' },
+          { key: '_dubbling', value: 'Dubbling' },
         ],
       },
     ];
@@ -221,9 +221,8 @@ export class ProjectsDashboardComponent implements OnInit {
    * @param filSelected list of Filter selected
    */
   procChangFilter(filSelected: FiltersSelected[]) {
-    console.log('procChangFilter');
+    console.log("~ file: projects-dashboard.component.ts ~ line 224 ~ ProjectsDashboardComponent ~ procChangFilter ~ filSelected", filSelected);
     this.filterSelected = filSelected;
-    console.log(filSelected);
     this.appyFilter();
   }
 
@@ -319,15 +318,15 @@ export class ProjectsDashboardComponent implements OnInit {
   applyFilterByFilComp()
   {
     // this.filterSelected
-    this.dataProjectItem = this.dataProjectItem.filter(el => 
-      
+    this.dataProjectItem = this.dataProjectItem.filter(el =>  
+      el.typeItem == 'folder' ||  
       this.filterSelected.every((currV) => {
-          if (currV.parentKey == 'languages' )
+          if (currV.parentKey == '_languages' )
             return currV.childKey == el.originalLanguaje || currV.childKey == el.targetLanguaje
-          else if (currV.parentKey == 'media' )
+          else if (currV.parentKey == '_media' )
             return currV.childKey == el.media
-          else if(currV.parentKey == 'features')
-            return el.features.findIndex(feat => feat == currV.childKey) > 0
+          else if(currV.parentKey == '_features')
+            return el.features.findIndex(feat => feat == currV.childKey) >= 0
           else
             return false
         })
