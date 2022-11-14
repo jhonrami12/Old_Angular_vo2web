@@ -61,7 +61,7 @@ export class ProjectsDashboardComponent implements OnInit {
         iconName: 'video_library',
         childs: [
           { key: 'audio', value: 'Audio' },
-          { key: 'Video', value: 'Video' },
+          { key: 'video', value: 'Video' },
         ],
       },
       {
@@ -188,6 +188,17 @@ export class ProjectsDashboardComponent implements OnInit {
         media: '',
         features: []
       },
+      {
+        id: 11,
+        typeItem: 'folder',
+        imgCover: '',
+        nameProjectItem: 'Folder New',
+        path: '',
+        originalLanguaje: '',
+        targetLanguaje: '',
+        media: '',
+        features: []
+      },
     ];
 
     this._originalDataPrItem = this.dataProjectItem;
@@ -210,8 +221,10 @@ export class ProjectsDashboardComponent implements OnInit {
    * @param filSelected list of Filter selected
    */
   procChangFilter(filSelected: FiltersSelected[]) {
+    console.log('procChangFilter');
     this.filterSelected = filSelected;
     console.log(filSelected);
+    this.appyFilter();
   }
 
   /**
@@ -229,7 +242,12 @@ export class ProjectsDashboardComponent implements OnInit {
    */
   procChangeShow(showView: string) {
     this.showBySelected = showView;
-    console.log(showView);
+    
+    if(this.showBySelected == 'files')
+        this.currentFolders = [];
+
+    this.appyFilter();
+    // console.log(showView);
   }
 
   /**
@@ -286,18 +304,62 @@ export class ProjectsDashboardComponent implements OnInit {
   {
     this.dataProjectItem = this._originalDataPrItem;
     
+    //Filters
     this.applyFilterByFolder();
-    
+    this.applyFilterByFilComp();
+
+    //Order by
+    this.sortByFolderFirst();
 
   }
 
-  applyFilterByFolder()
+  /**
+   * Method to apply the filter base on what was selected in the filter-by-field component
+   */
+  applyFilterByFilComp()
+  {
+    // this.filterSelected
+    this.dataProjectItem = this.dataProjectItem.filter(el => 
+      
+      this.filterSelected.every((currV) => {
+          if (currV.parentKey == 'languages' )
+            return currV.childKey == el.originalLanguaje || currV.childKey == el.targetLanguaje
+          else if (currV.parentKey == 'media' )
+            return currV.childKey == el.media
+          else if(currV.parentKey == 'features')
+            return el.features.findIndex(feat => feat == currV.childKey) > 0
+          else
+            return false
+        })
+      );
+  }
+  
+
+  /**
+   * Method to apply the filter base on the current folder selected.
+   * 
+   */
+  applyFilterByFolder(): void
   {
     if(this.showBySelected != 'folder')
+    {
+      this.dataProjectItem = this.dataProjectItem.filter(el => el.typeItem != 'folder' );  
       return;
-    
+    }
+      
     let allPath = this.currentFolders.toString().replace(',','/');
     this.dataProjectItem = this.dataProjectItem.filter(el => el.path == allPath);
+  }
+
+  /**
+   * Sort the items by firts the folder and after the item-project
+   */
+  sortByFolderFirst()
+  {
+    this.dataProjectItem = this.dataProjectItem.sort((a,b) => {
+        return a.typeItem == b.typeItem ? 0 : a.typeItem == 'folder' ? -1 : 1;
+      }
+    );
   }
 
 }
