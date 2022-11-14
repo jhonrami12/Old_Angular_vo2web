@@ -21,7 +21,7 @@
     <div class="flex justify-between flex-row sm:flex-row lg:flex-row">
         <div id="optLeft" class="flex flex-row">
             <app-show-by-field (onChangeShow)="procChangeShow($event)"></app-show-by-field>
-            <app-bread-crumb [folders]="currentFolders"></app-bread-crumb>
+            <app-bread-crumb [folders]="currentFolders" (onBackToPath)="procBreadCrumbBack($event)"></app-bread-crumb>
         </div>
         <div id="optRight" class="flex items-center h-max">
             <app-sort-by-field [sortByData]="dataSortBy" (onChangeSort)="procChangeSort($event)"></app-sort-by-field>

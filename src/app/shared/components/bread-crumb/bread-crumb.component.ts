@@ -1,5 +1,5 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-bread-crumb',
@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class BreadCrumbComponent implements OnInit {
   @Input() folders: string[];
+  @Output() onBackToPath = new EventEmitter<number>();
 
   showBreadCrumb: boolean = true;
 
@@ -23,4 +24,14 @@ export class BreadCrumbComponent implements OnInit {
       } else this.showBreadCrumb = true;
     });
   }
+
+  /**
+   * Metodo that process when user clic in a path in the bread-srumb
+   * @param FullPah full path to navigate
+   */
+  procClickPath(FullPah: number)
+  {
+    this.onBackToPath.emit(FullPah);
+  }
+
 }

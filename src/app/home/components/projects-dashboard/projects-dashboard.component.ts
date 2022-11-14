@@ -177,6 +177,17 @@ export class ProjectsDashboardComponent implements OnInit {
         media: '_video',
         features: ['_transcribe']
       },
+      {
+        id: 10,
+        typeItem: 'folder',
+        imgCover: '',
+        nameProjectItem: 'Folder more deep',
+        path: 'Predicas/Apologia',
+        originalLanguaje: '',
+        targetLanguaje: '',
+        media: '',
+        features: []
+      },
     ];
 
     this._originalDataPrItem = this.dataProjectItem;
@@ -251,6 +262,21 @@ export class ProjectsDashboardComponent implements OnInit {
   proItemProjAction(actionItemPro: KeyValue<string,ProjectItem>)
   {
     console.log(actionItemPro);
+  }
+
+  /**
+   * Method to process the event when back to the folder to some position
+   * @param positionBack Position in the bread scrumb to back
+   */
+  procBreadCrumbBack(positionBack: number)
+  {
+    console.log('positionBack:'+positionBack);
+    if (positionBack == -1)
+      this.currentFolders = [];
+
+    this.currentFolders = this.currentFolders.slice(0,positionBack+1);
+
+    this.appyFilter();
   }
 
   /**
