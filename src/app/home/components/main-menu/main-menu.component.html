@@ -1,18 +1,16 @@
-<mat-card class="h-full !bg-gray-600 !p-0">
+<mat-card class="h-full !bg-gray-200 !p-0">
   <mat-card class="bg-transparent !flex !p-2 m-1 !justify-center">
     <img mat-card-image src="/assets/img/LogoVo2Vo_official.png" class="!w-36 !max-w-none !m-0 !p-0" alt="vo2vo">
   </mat-card>
-  <mat-card class="bg-transparent !shadow-none !p-1 ">  
-    <app-button-main-menu display="Home" (click)="onClicActMenu('home')" icon="home" classColorIcon="text-violet-500"></app-button-main-menu>
-    <app-button-main-menu display="Project" (click)="onClicActMenu('projects')" icon="folder_open" classColorIcon="text-teal-500"></app-button-main-menu>
+  <mat-card class="bg-transparent !shadow-none !p-1 ">
+    <app-button-main-menu display="Home" (click)="onClicActMenu('home')" icon="home"
+      classColorIcon="text-violet-500"></app-button-main-menu>
+    <app-button-main-menu display="Project" (click)="onClicActMenu('projects')" icon="folder_open"
+      classColorIcon="text-teal-500"></app-button-main-menu>
   </mat-card>
   <mat-card class="bg-transparent !shadow-none !p-1 !absolute bottom-0 w-full ">
-    <app-button-main-menu 
-        display="Jhonathan Ramirez." 
-        avatar="true" 
-        class="!mx-3 bg-[url('/assets/img/user_blank.png')] bg-cover"
-        actions="true"
-    >
-      </app-button-main-menu>
+    <app-button-main-menu display="Jhonathan Ramirez." avatar="true"
+      class="!mx-3 bg-[url('/assets/img/user_blank.png')] bg-cover" actions="true">
+    </app-button-main-menu>
   </mat-card>
 </mat-card>
