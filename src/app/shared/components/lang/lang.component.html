@@ -1,0 +1,21 @@
+<div class="lang">
+  <p-dropdown
+    [options]="flags"
+    [(ngModel)]="flag"
+    optionLabel="title"
+    (onChange)="select($event)"
+  >
+    <ng-template pTemplate="selectedItem">
+      <div class="flex" *ngIf="flag">
+        <img class="flag" [src]="flag.url" />
+        <span>{{ flag.title }}</span>
+      </div>
+    </ng-template>
+    <ng-template let-flagCountry pTemplate="item">
+      <div class="flex">
+        <img class="flag" [src]="flagCountry.url" />
+        <span>{{ flagCountry.title }}</span>
+      </div>
+    </ng-template>
+  </p-dropdown>
+</div>

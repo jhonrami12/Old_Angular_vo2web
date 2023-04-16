@@ -1,23 +1,17 @@
 import { Component } from '@angular/core';
-import { SimpleAlertService } from './shared/services/simple-alert.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'vo2vo.web';
-
-  openedNotif: boolean;
-  constructor(private simpleAlertServ: SimpleAlertService) {
-    this.openedNotif = false;
-  }
+  constructor(private translate: TranslateService) {}
 
   ngOnInit(): void {
-    this.simpleAlertServ.onShowNofi.subscribe((notif: any) => {
-      this.openedNotif = true;
-      setTimeout(() => {  this.openedNotif = false; }, 3000);
-    });
+    const language = navigator.language.split('-');
+    this.translate.setDefaultLang(language[0]);
+    this.translate.use(language[0]);
   }
 }

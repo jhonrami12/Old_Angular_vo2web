@@ -1,0 +1,49 @@
+<div class="user" (click)="overlayVisible = !overlayVisible">
+  <p-avatar
+    icon="pi pi-user"
+    styleClass="mr-2"
+    size="xlarge"
+    shape="circle"
+  ></p-avatar>
+
+  <p-overlay
+    *ngIf="overlayVisible"
+    [(visible)]="overlayVisible"
+    styleClass="custom-overlay"
+  >
+    <ng-template pTemplate="content" let-option>
+      <div class="account">
+        <div class="header">
+          <p-avatar
+            icon="pi pi-user"
+            styleClass="mr-2"
+            size="xlarge"
+            shape="circle"
+          ></p-avatar>
+          <div class="header__info">
+            <label class="title fw-900 title_primary">Gabriel Herrera</label>
+            <label class="title title_primary">gaboghz654@gmail.com</label>
+          </div>
+          <p-button
+            label="Log Out"
+            styleClass="p-button-raised p-button-text"
+          ></p-button>
+        </div>
+        <div class="body">
+          <p-button
+            icon="pi pi-pencil"
+            styleClass="p-button-rounded p-button-text p-button-raised"
+          ></p-button>
+          <p-button
+            icon="pi pi-credit-card"
+            styleClass="p-button-rounded p-button-text p-button-raised"
+          ></p-button>
+          <p-button
+            icon="pi pi-cog"
+            styleClass="p-button-rounded p-button-text p-button-raised"
+          ></p-button>
+        </div>
+      </div>
+    </ng-template>
+  </p-overlay>
+</div>

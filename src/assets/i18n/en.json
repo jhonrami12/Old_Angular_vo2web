@@ -1,0 +1,24 @@
+{
+  "core": {
+    "login": "Log In",
+    "notAccountYet": "Do not you have an account yet?",
+    "register": "Sign In",
+    "or": "Or",
+    "email": "Email",
+    "password": "Password",
+    "logInWithEmail": "Login",
+    "forgotPassword": "have you forgotten your password?",
+    "uptadePassword": "Update password",
+    "google": "Log in with Google",
+    "facebook": "Log in with Facebook",
+    "loading": "Loading...",
+    "placeHolderEmail": "email@example.com"
+  },
+  "dashboard": {
+    "projectName": "Project Name",
+    "language": "Language",
+    "addFolder": "Add Folder",
+    "home": "Home",
+    "projects": "Projects"
+  }
+}

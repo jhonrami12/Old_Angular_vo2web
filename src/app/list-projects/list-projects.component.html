@@ -1,0 +1,24 @@
+<p-menubar [model]="items" [styleClass]="'subnav'">
+  <ng-template pTemplate="start">
+    <div class="submenu">
+      <span class="w100 p-input-icon-left p-float-label">
+        <i class="pi pi-search"></i>
+        <input id="search" class="w100" type="text" pInputText />
+        <label htmlFor="search">{{
+          "dashboard.projectName" | translate
+        }}</label>
+      </span>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="end">
+    <div class="folder" (click)="addNewFolder()">
+      <img
+        pTooltip="{{ 'dashboard.addFolder' | translate }}"
+        src="../../assets/svg/file-add2.svg"
+      />
+    </div>
+  </ng-template>
+</p-menubar>
+<div class="container">
+  <p-divider></p-divider>
+</div>

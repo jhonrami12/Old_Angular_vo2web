@@ -1,9 +1,0 @@
-<button  class="pr-2" (click)="procChangeShow(showSelected)" >
-    <div matRipple matTooltip="{{showSelected =='folder' ? '_show_all_files' : '_show_by_folder'}}"
-        [matRippleRadius]="23"
-        [matRippleUnbounded]="true"
-        [matRippleCentered]="true">
-        <img *ngIf="showSelected == 'files'" width="22" draggable=false class="!select-none !m-0 w-6 min-w-min" src="./assets/svg/by-files-02.svg">
-        <img *ngIf="showSelected == 'folder'" width="22" draggable=false class="!select-none !m-0 w-6 min-w-min" src="./assets/svg/by-folder-02.svg">
-    </div>
-</button>

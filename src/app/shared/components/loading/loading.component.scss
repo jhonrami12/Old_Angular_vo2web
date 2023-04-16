@@ -1,0 +1,21 @@
+.loading {
+  background: rgba(0, 38, 132, 0.4);
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-secondary);
+  font-size: 2rem;
+  font-weight: 900;
+
+  img {
+    display: block;
+    align-self: flex-end;
+    justify-content: center;
+    width: 150px;
+  }
+}

@@ -1,0 +1,73 @@
+<p-menubar styleClass="nav">
+  <ng-template pTemplate="start">
+    <div class="sidebar">
+      <p-button
+        styleClass="p-button-lg p-button-text"
+        (click)="sidebarVisible = true"
+        icon="pi pi-bars"
+      ></p-button>
+      <img src="../../assets/svg/icon-vo2vo.ai.svg" height="60" class="ml-2" />
+      <span class="title title_logo fw-900">Vo2Vo.ai</span>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="end">
+    <div class="options">
+      <div class="options__buttons">
+        <p-button
+          label="Help"
+          icon="pi pi-info-circle"
+          styleClass="p-button-text"
+        ></p-button>
+        <p-button
+          label="Documentation"
+          icon="pi pi-copy"
+          styleClass="p-button-text"
+        ></p-button>
+        <p-button
+          label="Questions"
+          icon="pi pi-question"
+          styleClass="p-button-text"
+        ></p-button>
+        <p-button
+          label="Plans"
+          icon="pi pi-shopping-bag"
+          styleClass="p-button-text"
+        ></p-button>
+      </div>
+
+      <app-user></app-user>
+    </div>
+  </ng-template>
+</p-menubar>
+
+<router-outlet></router-outlet>
+<app-home *ngIf="showHome"></app-home>
+
+<p-sidebar [(visible)]="sidebarVisible" styleClass="custom-sidebar">
+  <ng-template pTemplate="header">
+    <img
+      src="../../assets/svg/icon-vo2vo.ai.svg"
+      height="50"
+      style="width: 5rem"
+    />
+    <span class="title title_logo white fw-900">Vo2Vo.ai</span>
+  </ng-template>
+  <ng-template pTemplate="body">
+    <p-divider></p-divider>
+    <div class="body">
+      <ul class="list">
+        <li
+          class="list__item"
+          *ngFor="let item of itemsSidebar"
+          (click)="navigate(item.page)"
+        >
+          <img [src]="item.img" />
+          <span>{{ item.label }}</span>
+        </li>
+      </ul>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <p-divider></p-divider>
+  </ng-template>
+</p-sidebar>

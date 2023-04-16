@@ -1,0 +1,82 @@
+.submenu {
+  display: flex;
+  margin: 0.5rem 0;
+}
+
+.folder {
+  width: 3rem;
+  cursor: pointer;
+  display: flex;
+}
+
+.container {
+  margin: 0 6rem;
+}
+
+::ng-deep {
+  .p-menubar .p-menuitem-link .p-menuitem-icon {
+    font-size: 2rem;
+  }
+
+  .pi-bars {
+    font-size: 2rem;
+  }
+
+  .pi-filter:before,
+  .pi-bars:before,
+  .pi-language:before {
+    color: var(--color-secondary);
+  }
+
+  .subnav {
+    background-color: var(--color-white);
+    margin: 1rem 6rem;
+    padding: 0 1rem;
+  }
+
+  .search {
+    display: flex;
+  }
+
+  .w100 {
+    width: 100%;
+    min-width: 30rem;
+  }
+
+  .p-menubar .p-menubar-root-list {
+    border: none;
+  }
+
+  @media screen and (max-width: 960px) {
+    .p-menubar .p-menubar-button {
+      width: 3rem;
+      height: 3rem;
+      margin-left: 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .w100 {
+      min-width: 10rem;
+    }
+    .subnav {
+      display: grid;
+      grid-template-areas:
+        "first second"
+        "third third";
+      margin: 0 1rem;
+      .p-menubar-start {
+        grid-area: first;
+        width: 100%;
+      }
+
+      .p-menubar-end {
+        grid-area: second;
+      }
+    }
+
+    .p-menubar .p-menubar-button {
+      margin-left: 0;
+    }
+  }
+}

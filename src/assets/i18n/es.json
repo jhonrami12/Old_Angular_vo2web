@@ -1,0 +1,24 @@
+{
+  "core": {
+    "login": "Iniciar Sesión",
+    "notAccountYet": "¿Aún no tienes una cuenta?",
+    "register": "Registrarse",
+    "or": "O",
+    "email": "Email",
+    "password": "Contraseña",
+    "logInWithEmail": "Iniciar Sesión",
+    "forgotPassword": "¿Has olvidado tu contraseña?",
+    "uptadePassword": "Actualizar contraseña",
+    "google": "Iniciar sesión con Google",
+    "facebook": "Iniciar sesión con Facebook",
+    "loading": "Cargando...",
+    "placeHolderEmail": "email@ejemplo.com"
+  },
+  "dashboard": {
+    "projectName": "Nombre Proyecto",
+    "language": "Idioma",
+    "addFolder": "Agregar Carpeta",
+    "home": "Inicio",
+    "projects": "Proyectos"
+  }
+}

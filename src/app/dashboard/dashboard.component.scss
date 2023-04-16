@@ -1,0 +1,81 @@
+.sidebar {
+  display: flex;
+  align-items: center;
+  margin: 0 2rem;
+}
+
+::ng-deep {
+  .custom-sidebar {
+    background-color: var(--background-color-overlay);
+    width: 25rem !important;
+  }
+  .p-button.p-button-lg .p-button-icon {
+    font-size: 3rem;
+  }
+
+  .p-menubar {
+    background-color: var(--background-color);
+  }
+
+  @media (max-width: 768px) {
+    .nav {
+      flex-direction: column;
+    }
+
+    .nav .p-menubar-end {
+      margin: 1rem 0 !important;
+    }
+  }
+}
+
+.options {
+  display: flex;
+  align-items: center;
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-white);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .options {
+    justify-content: space-between;
+    &__buttons {
+      flex-direction: column;
+    }
+  }
+}
+
+.body {
+  padding: 1rem 1rem;
+  color: var(--color-white);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &__item {
+    font-family: var();
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1rem;
+    color: var(--color-menu-sidebar);
+
+    img {
+      width: 2rem;
+    }
+
+    &:hover {
+      background: rgba(194, 202, 235, 0.04);
+      border-radius: 0.5rem;
+    }
+  }
+}

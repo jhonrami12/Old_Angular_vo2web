@@ -1,0 +1,27 @@
+.flag {
+  width: 1.6rem;
+  height: 1.1rem;
+
+  span {
+    color: var(--color-secondary);
+  }
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.lang {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50px;
+}
+
+::ng-deep {
+  .p-dropdown {
+    background-color: transparent;
+    border: none;
+  }
+}

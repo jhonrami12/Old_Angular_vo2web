@@ -1,0 +1,93 @@
+/* You can add global styles to this file, and also import other style files */
+/*@tailwind base;
+@tailwind components;
+@tailwind utilities;*/
+
+@import "./assets/scss/variables.scss";
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-main);
+  font-size: 1.6rem;
+  line-height: 1.8;
+  background-color: var(--background-color);
+}
+
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+.fw-900 {
+  font-weight: 900;
+}
+
+.title {
+  text-align: center;
+}
+
+.title_logo {
+  font-family: var(--font-family-title);
+  font-size: var(--font-size-main);
+  color: var(--color-secondary);
+}
+
+.white {
+  color: var(--color-white);
+}
+
+.title_primary {
+  font-family: var(--font-family-title-secondary);
+  font-size: var(--font-size-secondary);
+  color: var(--color-white);
+}
+
+.p-input-icon-left {
+  display: flex;
+}
+
+.p-inputtext {
+  padding: 1rem 0.75rem;
+}
+
+.p-menubar .p-submenu-list {
+  border-radius: 0.5rem;
+}
+
+.ml-5 {
+  margin-left: 5rem;
+}
+
+.ml-2 {
+  margin-left: 2rem;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.container {
+  margin: 3rem 6rem;
+  background-color: var(--color-white);
+  border-radius: 0.5rem;
+}
+
+.p-button {
+  font-family: var(--font-family-title-secondary);
+  font-size: var(--font-size-secondary);
+  padding: 0.5rem 0.75rem;
+}

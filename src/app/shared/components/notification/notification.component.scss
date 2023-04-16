@@ -1,0 +1,30 @@
+::ng-deep {
+  .custom {
+    font-size: 1.5rem;
+    width: 33rem !important;
+  }
+
+  .p-toast .p-toast-message.p-toast-message-success {
+    border: solid #155724;
+    border-width: 0 0 0 0.6rem;
+    color: #155724;
+  }
+
+  .p-toast .p-toast-message.p-toast-message-info {
+    border: solid #004085;
+    border-width: 0 0 0 0.6rem;
+    color: #004085;
+  }
+
+  .p-toast .p-toast-message.p-toast-message-warn {
+    border: solid #856404;
+    border-width: 0 0 0 0.6rem;
+    color: #856404;
+  }
+
+  .p-toast .p-toast-message.p-toast-message-error {
+    border: solid #721c24;
+    border-width: 0 0 0 0.6rem;
+    color: #721c24;
+  }
+}

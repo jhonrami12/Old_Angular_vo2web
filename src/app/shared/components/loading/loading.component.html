@@ -1,0 +1,10 @@
+<div class="loading" *ngIf="loadingService.loading$ | async">
+  <div>
+    <img src="../../../../assets/svg/vo2vo-loading.svg" />
+    <p-progressBar
+      mode="indeterminate"
+      [style]="{ height: '6px' }"
+    ></p-progressBar>
+    <label>{{ "core.loading" | translate }}</label>
+  </div>
+</div>

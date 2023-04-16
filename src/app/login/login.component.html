@@ -1,0 +1,86 @@
+<div class="container-login">
+  <nav class="navbar">
+    <div class="menu">
+      <a routerLink="/home" class="menu__logo">
+        <img
+          src="./assets/svg/icon-vo2vo.ai.svg"
+          class="menu__logo--img"
+          alt="vo2vo.ai Logo"
+        />
+        <span class="title title_logo fw-900">vo2vo.ai</span>
+      </a>
+      <div class="menu__register">
+        <span class="white title title_primary">{{
+          "core.notAccountYet" | translate
+        }}</span>
+        <p-button
+          styleClass="p-button-lg"
+          (click)="register()"
+          label="{{ 'core.register' | translate }}"
+        ></p-button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="login">
+    <p-card class="login__body">
+      <form [formGroup]="formLogin" class="login__form" (ngSubmit)="login()">
+        <span class="p-input-icon-left p-float-label">
+          <i class="pi pi-user"></i>
+          <input
+            id="email"
+            formControlName="email"
+            [ngClass]="{
+              'ng-invalid ng-dirty':
+                invalidEmail.touched && invalidEmail.invalid
+            }"
+            type="text"
+            pInputText
+            placeholder="{{ 'core.placeHolderEmail' | translate }}"
+          />
+          <label htmlFor="email">{{ "core.email" | translate }}</label>
+        </span>
+        <span class="p-input-icon-left p-float-label">
+          <i class="pi pi-lock"></i>
+          <input
+            formControlName="password"
+            id="password"
+            type="password"
+            pInputText
+          />
+          <label htmlFor="password">{{ "core.password" | translate }}</label>
+        </span>
+        <p-button
+          type="submit"
+          styleClass="p-button-raised button-login"
+          label="{{ 'core.logInWithEmail' | translate }}"
+          [disabled]="formLogin.invalid"
+        ></p-button>
+        <span
+          >{{ "core.forgotPassword" | translate }}
+          <a>{{ "core.uptadePassword" | translate }}</a>
+        </span>
+      </form>
+      <div class="login__social">
+        {{ "core.or" | translate }}
+        <p-button
+          styleClass="p-button-raised bg-white  p-button-text  button-login"
+        >
+          <img
+            style="width: 1.8rem"
+            alt="Google"
+            src="../../../assets/svg/google.svg"
+          />
+          <span>{{ "core.google" | translate }} </span>
+        </p-button>
+        <p-button
+          class="button-social"
+          styleClass="p-button-raised button-login"
+        >
+          <i class="pi pi-facebook" style="font-size: 1.8rem"></i>
+          <span>{{ "core.facebook" | translate }} </span>
+        </p-button>
+      </div>
+    </p-card>
+  </div>
+</div>
