@@ -14,11 +14,14 @@
     <div class="folder" (click)="addNewFolder()">
       <img
         pTooltip="{{ 'dashboard.addFolder' | translate }}"
-        src="../../assets/svg/file-add2.svg"
+        src="../../assets/svg/add-new-project.svg"
       />
     </div>
   </ng-template>
 </p-menubar>
 <div class="container">
-  <p-divider></p-divider>
+  <div class="projects">
+    <app-project></app-project>
+    <app-project></app-project>
+  </div>
 </div>

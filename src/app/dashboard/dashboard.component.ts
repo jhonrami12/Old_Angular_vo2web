@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { TranslateService } from '@ngx-translate/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,13 +15,17 @@ export class DashboardComponent {
   itemsSidebar = [];
   constructor(
     private translateService: TranslateService,
-    private router: Router
+    private router: Router,
+    private activateRoute: ActivatedRoute
   ) {
     this.setItemsSidebar();
+    console.log(this.activateRoute);
+    console.log(this.router);
+    this.showHome = this.router.url === '/dashboard';
   }
 
   navigate(url) {
-    this.showHome = url === '/dashboard' ? true : false;
+    this.showHome = url === '/dashboard';
     this.router.navigate([url]);
     this.sidebarVisible = false;
   }

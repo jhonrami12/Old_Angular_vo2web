@@ -4,6 +4,7 @@ import { ListProjectsComponent } from './list-projects.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PrimengModule } from '../shared/modules/primeng.module';
 import { CustomTranslateModule } from '../shared/modules/translate.module';
+import { ProjectModule } from '../project/project.module';
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     CustomTranslateModule,
+    ProjectModule,
     PrimengModule,
     RouterModule.forChild(routes),
   ],

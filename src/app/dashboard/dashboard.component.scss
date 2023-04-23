@@ -4,7 +4,50 @@
   margin: 0 2rem;
 }
 
+.options {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 2rem;
+  }
+
+  &__buttons {
+    display: grid;
+    align-items: center;
+    background-color: var(--color-white);
+    border-radius: 0.5rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__button {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 376px) {
+  .options {
+    &__buttons {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 0.5rem;
+    }
+  }
+}
+
 ::ng-deep {
+  .pi-bars:before {
+    color: var(--color-white);
+  }
+
+  .nav.nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--background-color-overlay);
+    border-radius: 0;
+  }
+
   .custom-sidebar {
     background-color: var(--background-color-overlay);
     width: 25rem !important;
@@ -18,34 +61,22 @@
   }
 
   @media (max-width: 768px) {
-    .nav {
-      flex-direction: column;
+    .nav.nav {
+      display: grid;
+      justify-content: center;
     }
-
     .nav .p-menubar-end {
       margin: 1rem 0 !important;
     }
   }
-}
 
-.options {
-  display: flex;
-  align-items: center;
+  @media (min-width: 768px) {
+    .nav .p-menubar-start {
+      margin-left: 3rem;
+    }
 
-  &__buttons {
-    display: flex;
-    align-items: center;
-    background-color: var(--color-white);
-    border-radius: 0.5rem;
-    padding: 0.5rem 0.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .options {
-    justify-content: space-between;
-    &__buttons {
-      flex-direction: column;
+    .nav .p-menubar-end {
+      margin: 0 5rem;
     }
   }
 }
@@ -60,6 +91,10 @@
   margin: 0;
   padding: 0;
 
+  img {
+    width: 2rem;
+  }
+
   &__item {
     font-family: var();
     cursor: pointer;
@@ -68,10 +103,6 @@
     gap: 1rem;
     padding: 1rem 1rem;
     color: var(--color-menu-sidebar);
-
-    img {
-      width: 2rem;
-    }
 
     &:hover {
       background: rgba(194, 202, 235, 0.04);

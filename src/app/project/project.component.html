@@ -1,0 +1,70 @@
+<p-card>
+  <ng-template pTemplate="header">
+    <div class="header">
+      <img alt="project" src="../../assets/img/imagen-project-prueba.PNG" />
+      <div class="tags">
+        <div class="tags__tag">
+          <img src="../../assets/svg/translate-icon.svg" />
+        </div>
+        <div class="tags__tag">
+          <img src="../../assets/svg/audio-icon.svg" />
+        </div>
+        <div class="tags__tag">
+          <img src="../../assets/svg/transcript-icon.svg" />
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <div class="body">
+    <div class="body__info">
+      <h2 class="body__info--title">Test title my friends</h2>
+      <small class="body__info--description"
+        >This a short description about the video</small
+      >
+      <small class="body__info--date">Last edited: 10/02/23</small>
+    </div>
+    <div class="options">
+      <p-button
+        styleClass="p-button-text"
+        (click)="overlayVisible = !overlayVisible"
+      >
+        <img src="../../assets/svg/ellipsis-icon.svg" />
+      </p-button>
+      <p-overlay [(visible)]="overlayVisible">
+        <div class="custom-overlay">
+          <ul class="list">
+            <li class="list__item">
+              <img src="../../assets/svg/edit-icon.svg" />
+              <span>Edit</span>
+            </li>
+            <li class="list__item">
+              <img src="../../assets/svg/preview-icon.svg" />
+              <span>Preview</span>
+            </li>
+            <li class="list__item">
+              <img src="../../assets/svg/download-icon.svg" />
+              <span>Download</span>
+            </li>
+            <li class="list__item">
+              <img src="../../assets/svg/rename-icon.svg" />
+              <span>Rename</span>
+            </li>
+            <li class="list__item">
+              <img src="../../assets/svg/archive-icon.svg" />
+              <span>Archive</span>
+            </li>
+            <li class="list__item">
+              <img src="../../assets/svg/copy-icon.svg" />
+              <span>Copy</span>
+            </li>
+            <li class="list__item">
+              <img src="../../assets/svg/delete-icon.svg" />
+              <span>Delete</span>
+            </li>
+          </ul>
+        </div>
+      </p-overlay>
+    </div>
+  </div>
+</p-card>

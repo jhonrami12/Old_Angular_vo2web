@@ -9,10 +9,6 @@
   display: flex;
 }
 
-.container {
-  margin: 0 6rem;
-}
-
 ::ng-deep {
   .p-menubar .p-menuitem-link .p-menuitem-icon {
     font-size: 2rem;
@@ -78,5 +74,25 @@
     .p-menubar .p-menubar-button {
       margin-left: 0;
     }
+  }
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 2rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 375px) {
+  .projects {
+    grid-template-columns: repeat(1, 1fr);
   }
 }

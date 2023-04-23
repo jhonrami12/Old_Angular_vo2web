@@ -2,40 +2,37 @@
   <ng-template pTemplate="start">
     <div class="sidebar">
       <p-button
-        styleClass="p-button-lg p-button-text"
+        styleClass="p-button-lg p-button-text "
         (click)="sidebarVisible = true"
         icon="pi pi-bars"
       ></p-button>
       <img src="../../assets/svg/icon-vo2vo.ai.svg" height="60" class="ml-2" />
-      <span class="title title_logo fw-900">Vo2Vo.ai</span>
+      <span class="title title_logo white fw-900">Vo2Vo.ai</span>
     </div>
   </ng-template>
   <ng-template pTemplate="end">
     <div class="options">
       <div class="options__buttons">
-        <p-button
-          label="Help"
-          icon="pi pi-info-circle"
-          styleClass="p-button-text"
-        ></p-button>
-        <p-button
-          label="Documentation"
-          icon="pi pi-copy"
-          styleClass="p-button-text"
-        ></p-button>
-        <p-button
-          label="Questions"
-          icon="pi pi-question"
-          styleClass="p-button-text"
-        ></p-button>
-        <p-button
-          label="Plans"
-          icon="pi pi-shopping-bag"
-          styleClass="p-button-text"
-        ></p-button>
-      </div>
+        <p-button styleClass="p-button-text">
+          <img src="../../assets/svg/help-faq.svg" />
+          <span>Help</span>
+        </p-button>
 
-      <app-user></app-user>
+        <p-button styleClass="p-button-text">
+          <img src="../../assets/svg/documentation-icon.svg" />
+          <span>Documentation</span>
+        </p-button>
+
+        <p-button styleClass="p-button-text">
+          <img src="../../assets/svg/question-icon.svg" />
+          <span>Questions</span>
+        </p-button>
+
+        <p-button styleClass="p-button-text">
+          <img src="../../assets/svg/plan-icon.svg" />
+          <span>Plans</span>
+        </p-button>
+      </div>
     </div>
   </ng-template>
 </p-menubar>
@@ -69,5 +66,6 @@
   </ng-template>
   <ng-template pTemplate="footer">
     <p-divider></p-divider>
+    <app-user></app-user>
   </ng-template>
 </p-sidebar>

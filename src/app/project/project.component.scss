@@ -1,0 +1,132 @@
+img {
+  border-radius: 0.5rem;
+}
+::ng-deep {
+  .p-card .p-card-content {
+    padding: 0;
+  }
+
+  .p-card .p-card-body {
+    padding: 1rem 0 1rem 1rem;
+  }
+
+  .p-button:focus {
+    box-shadow: none;
+  }
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  line-height: 1.3;
+
+  &__info--title {
+    margin: 0;
+    font-family: var(--font-family-title-secondary);
+    font-weight: 700;
+    font-size: var(--font-size-titles);
+  }
+
+  &__info--description {
+    font-family: var(--font-family-title-secondary);
+    font-size: var(--font-size-card-description);
+  }
+
+  &__info--date {
+    font-family: var(--font-family-title-secondary);
+    font-size: var(--font-size-12);
+  }
+
+  small {
+    display: block;
+  }
+}
+
+.options {
+  display: flex;
+  justify-self: flex-end;
+  align-self: flex-end;
+
+  img {
+    height: 3rem;
+  }
+}
+
+.list {
+  display: grid;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  &__item {
+    font-family: var(--font-family-title-secondary);
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    color: var(--background-color-overlay);
+    font-size: var(--font-size-card-description);
+
+    &:hover {
+      cursor: pointer;
+      background: #dbeaf2;
+    }
+
+    img {
+      width: 2rem;
+      margin-right: 0.2rem;
+    }
+  }
+}
+
+::ng-deep {
+  .p-card {
+    min-width: 15rem;
+  }
+}
+
+.custom-overlay {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: none;
+  border-radius: 0.5rem;
+  padding: 1rem 0;
+}
+
+.header {
+  position: relative;
+
+  .tags {
+    display: flex;
+    gap: 1rem;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+
+    &__tag {
+      background-color: #fff;
+      border-radius: 0.5rem;
+      padding: 0.2rem;
+    }
+
+    img {
+      width: 2rem;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  ::ng-deep {
+    .p-overlay {
+      left: 235px !important;
+    }
+  }
+}
+
+@media (max-width: 280px) {
+  ::ng-deep {
+    .p-overlay {
+      left: 150px !important;
+    }
+  }
+}

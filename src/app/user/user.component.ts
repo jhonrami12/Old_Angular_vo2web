@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class UserComponent {
   overlayVisible: boolean = false;
+
+  constructor(private router: Router) {}
+
+  logOut() {
+    this.router.navigate(['/login']);
+  }
 }

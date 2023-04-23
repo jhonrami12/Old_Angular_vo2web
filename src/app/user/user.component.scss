@@ -6,7 +6,6 @@
 
 ::ng-deep {
   .custom-overlay.custom-overlay {
-    border-radius: 0.5rem;
     top: 45px !important;
     left: -23rem !important;
     box-shadow: 0 4px 10px #00000008, 0 0 2px #0000000f, 0 2px 6px #0000001f !important;
@@ -18,8 +17,8 @@
 }
 
 .account {
+  border-radius: 0 0 1rem 1rem;
   background-color: var(--background-color);
-  width: 25rem;
 
   .body {
     display: flex;
@@ -31,7 +30,6 @@
 
   .header {
     display: grid;
-    border-radius: 0.5rem;
     justify-content: center;
     background-color: var(--background-color-overlay);
     gap: 1rem;
