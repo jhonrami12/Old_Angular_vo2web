@@ -1,0 +1,11 @@
+.container {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+::ng-deep {
+  .p-breadcrumb {
+    background: none;
+    padding: 1rem 0 0 0;
+  }
+}

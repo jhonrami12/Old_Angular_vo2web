@@ -19,6 +19,7 @@
 
   .bg-white {
     background-color: var(--color-white) !important;
+    color: var(--background-color-overlay) !important;
   }
 }
 
@@ -107,6 +108,22 @@ a {
     &__navbar {
       display: flex;
       gap: 1rem;
+    }
+  }
+}
+
+:host {
+  ::ng-deep {
+    .p-button {
+      background-color: var(--background-color-overlay);
+    }
+
+    .p-button:hover {
+      background-color: var(--background-color-overlay);
+    }
+
+    .p-button.p-button-text:enabled:hover {
+      color: var(--color-white);
     }
   }
 }

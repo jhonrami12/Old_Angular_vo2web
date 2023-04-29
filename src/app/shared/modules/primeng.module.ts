@@ -8,12 +8,12 @@ import { PasswordModule } from 'primeng/password';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { SidebarModule } from 'primeng/sidebar';
 import { MenubarModule } from 'primeng/menubar';
-import { ToastModule } from 'primeng/toast';
 import { MenuModule } from 'primeng/menu';
 import { DividerModule } from 'primeng/divider';
 import { TooltipModule } from 'primeng/tooltip';
 import { AvatarModule } from 'primeng/avatar';
 import { OverlayModule } from 'primeng/overlay';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
 
 @NgModule({
   declarations: [],
@@ -26,13 +26,13 @@ import { OverlayModule } from 'primeng/overlay';
     PasswordModule,
     ProgressBarModule,
     SidebarModule,
-    ToastModule,
     MenubarModule,
     MenuModule,
     DividerModule,
     AvatarModule,
     TooltipModule,
     OverlayModule,
+    BreadcrumbModule,
   ],
   exports: [
     CardModule,
@@ -43,12 +43,12 @@ import { OverlayModule } from 'primeng/overlay';
     ProgressBarModule,
     SidebarModule,
     MenubarModule,
-    ToastModule,
     MenuModule,
     DividerModule,
     TooltipModule,
     AvatarModule,
     OverlayModule,
+    BreadcrumbModule,
   ],
 })
 export class PrimengModule {}

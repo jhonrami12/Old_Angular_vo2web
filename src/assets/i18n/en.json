@@ -6,7 +6,7 @@
     "or": "Or",
     "email": "Email",
     "password": "Password",
-    "logInWithEmail": "Login",
+    "logInWithEmail": "Log In",
     "forgotPassword": "have you forgotten your password?",
     "uptadePassword": "Update password",
     "google": "Log in with Google",
@@ -18,7 +18,21 @@
     "projectName": "Project Name",
     "language": "Language",
     "addFolder": "Add Folder",
-    "home": "Home",
-    "projects": "Projects"
+    "home": "Dashboard",
+    "projects": "Projects",
+    "account": "Account",
+    "help": "Help",
+    "documentation": "Documentation",
+    "questions": "Questions",
+    "pricing": "Pricing"
+  },
+  "project": {
+    "edit": "Edit",
+    "preview": "Preview",
+    "download": "Download",
+    "rename": "Rename",
+    "archive": "Archive",
+    "copy": "Copy",
+    "delete": "Delete"
   }
 }

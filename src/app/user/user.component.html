@@ -1,33 +1,50 @@
-<div class="account">
-  <div class="header">
+<div class="v2vOverview">
+  <div class="v2vRemaining">
+    <!--<img src="../../assets/svg/minutes-icon.svg" />
+    <label class="v2vRemaining__quantity">100</label>-->
+
+    <circle-progress
+      [percent]="50"
+      [maxPercent]="100"
+      [radius]="15"
+      [titleFontSize]="'12'"
+      [showSubtitle]="false"
+      [outerStrokeWidth]="4"
+      [innerStrokeWidth]="0"
+      [outerStrokeColor]="'#bdc3de'"
+      [animation]="true"
+      [titleColor]="'#bdc3de'"
+      [unitsColor]="'#bdc3de'"
+      [animationDuration]="300"
+    ></circle-progress>
+    <label>Remaining Credits</label>
+  </div>
+</div>
+
+<div class="v2vAccount">
+  <div class="v2vAccount__user">
     <p-avatar
       icon="pi pi-user"
       styleClass="mr-2"
       size="xlarge"
       shape="circle"
     ></p-avatar>
-    <div class="header__info">
-      <label class="title fw-900 title_primary">Gabriel Herrera</label>
-      <label class="title title_primary">gaboghz654@gmail.com</label>
+    <div class="v2vAccount__user__info">
+      <label class="fw-900">Gabriel Herrera</label>
+      <label class="">gaboghz654@gmail.com</label>
     </div>
+  </div>
+  <div class="v2vAccount__buttons">
+    <p-button
+      label="Account"
+      styleClass="p-button-raised p-button-text"
+      (click)="account()"
+    ></p-button>
+
     <p-button
       label="Log Out"
       styleClass="p-button-raised p-button-text"
       (click)="logOut()"
-    ></p-button>
-  </div>
-  <div class="body">
-    <p-button
-      icon="pi pi-pencil"
-      styleClass="p-button-rounded p-button-text p-button-raised"
-    ></p-button>
-    <p-button
-      icon="pi pi-credit-card"
-      styleClass="p-button-rounded p-button-text p-button-raised"
-    ></p-button>
-    <p-button
-      icon="pi pi-cog"
-      styleClass="p-button-rounded p-button-text p-button-raised"
     ></p-button>
   </div>
 </div>

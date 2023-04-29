@@ -13,30 +13,21 @@
   <ng-template pTemplate="end">
     <div class="options">
       <div class="options__buttons">
-        <p-button styleClass="p-button-text">
-          <img src="../../assets/svg/help-faq.svg" />
-          <span>Help</span>
-        </p-button>
-
-        <p-button styleClass="p-button-text">
-          <img src="../../assets/svg/documentation-icon.svg" />
-          <span>Documentation</span>
-        </p-button>
-
-        <p-button styleClass="p-button-text">
-          <img src="../../assets/svg/question-icon.svg" />
-          <span>Questions</span>
-        </p-button>
-
-        <p-button styleClass="p-button-text">
-          <img src="../../assets/svg/plan-icon.svg" />
-          <span>Plans</span>
+        <p-button
+          [ngClass]="{ activeSubmenu: currentPage === menu.page }"
+          styleClass="p-button-text"
+          *ngFor="let menu of itemsMenu"
+          (click)="navigate(menu)"
+        >
+          <img [src]="menu.img" />
+          <span>{{ menu.label }}</span>
         </p-button>
       </div>
     </div>
   </ng-template>
 </p-menubar>
 
+<app-bread-crumb (onItemSelected)="onSelectedUser($event)"></app-bread-crumb>
 <router-outlet></router-outlet>
 <app-home *ngIf="showHome"></app-home>
 
@@ -50,13 +41,13 @@
     <span class="title title_logo white fw-900">Vo2Vo.ai</span>
   </ng-template>
   <ng-template pTemplate="body">
-    <p-divider></p-divider>
     <div class="body">
       <ul class="list">
         <li
           class="list__item"
+          [ngClass]="{ active: currentPage === item.page }"
           *ngFor="let item of itemsSidebar"
-          (click)="navigate(item.page)"
+          (click)="navigate(item)"
         >
           <img [src]="item.img" />
           <span>{{ item.label }}</span>
@@ -65,7 +56,6 @@
     </div>
   </ng-template>
   <ng-template pTemplate="footer">
-    <p-divider></p-divider>
-    <app-user></app-user>
+    <app-user (onSelected)="onSelectedUser($event)"></app-user>
   </ng-template>
 </p-sidebar>

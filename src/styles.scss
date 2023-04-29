@@ -34,13 +34,12 @@ img {
 .title {
   text-align: center;
   font-family: var(--font-family-title-secondary);
-  color: var(--color-secondary);
 }
 
 .title_logo {
   font-family: var(--font-family-title);
   font-size: var(--font-size-main);
-  color: var(--color-secondary);
+  color: var(--background-color-overlay);
 }
 
 .white {
@@ -48,7 +47,6 @@ img {
 }
 
 .title_primary {
-  font-family: var(--font-family-title-secondary);
   font-size: var(--font-size-secondary);
   color: var(--color-white);
 }
@@ -84,13 +82,16 @@ img {
 
 @media (min-width: 768px) {
   .container {
-    margin: 3rem 6rem;
+    margin: 0 6rem;
   }
 }
 
 .p-button {
-  font-family: var(--font-family-title-secondary);
   font-size: var(--font-size-secondary);
   padding: 0.5rem 0.75rem;
   font-weight: 700;
+}
+
+.p-inputtext:enabled:hover {
+  border-color: var(--background-color-overlay);
 }

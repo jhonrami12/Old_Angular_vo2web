@@ -1,17 +1,19 @@
 img {
   border-radius: 0.5rem;
 }
-::ng-deep {
-  .p-card .p-card-content {
-    padding: 0;
-  }
+:host {
+  ::ng-deep {
+    .p-card .p-card-content {
+      padding: 0;
+    }
 
-  .p-card .p-card-body {
-    padding: 1rem 0 1rem 1rem;
-  }
+    .p-card .p-card-body {
+      padding: 1rem 0 1rem 1rem;
+    }
 
-  .p-button:focus {
-    box-shadow: none;
+    .p-button:focus {
+      box-shadow: none;
+    }
   }
 }
 

@@ -18,7 +18,21 @@
     "projectName": "Nombre Proyecto",
     "language": "Idioma",
     "addFolder": "Agregar Carpeta",
-    "home": "Inicio",
-    "projects": "Proyectos"
+    "home": "Panel",
+    "projects": "Proyectos",
+    "account": "Cuenta",
+    "help": "Ayuda",
+    "documentation": "Documentación",
+    "questions": "Preguntas",
+    "pricing": "Precios"
+  },
+  "project": {
+    "edit": "Edit",
+    "preview": "Preview",
+    "download": "Download",
+    "rename": "Rename",
+    "archive": "Archive",
+    "copy": "Copy",
+    "delete": "Delete"
   }
 }

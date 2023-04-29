@@ -1,9 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { MenuItem } from 'primeng/api';
-import { NotificationService } from '../shared/services/notification.service';
-import { TypeMessage } from '../shared/models/constants';
 import { Subject, takeUntil } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-list-projects',
@@ -16,7 +15,7 @@ export class ListProjectsComponent implements OnDestroy, OnInit {
 
   constructor(
     private translateService: TranslateService,
-    private notificationService: NotificationService
+    private toast: ToastrService
   ) {
     this.setMenuFilter();
   }
@@ -30,10 +29,8 @@ export class ListProjectsComponent implements OnDestroy, OnInit {
   }
 
   addNewFolder() {
-    this.notificationService.createMessage(
-      TypeMessage.Error,
-      'Folder Added correctly sdasda asdasd asdasd'
-    );
+    console.log(this.toast);
+    this.toast.success('Hello world!', 'Toastr fun!');
   }
 
   private setMenuFilter() {

@@ -10,6 +10,7 @@
 
   img {
     width: 2rem;
+    margin-right: 0.5rem;
   }
 
   &__buttons {
@@ -37,6 +38,17 @@
 }
 
 ::ng-deep {
+  .activeSubmenu {
+    background: var(--color-menu-sidebar);
+    border-radius: 0.5rem;
+  }
+
+  .p-sidebar-header {
+    background: var(--background-color-box-sidebar);
+    margin: 1rem;
+    border-radius: 1rem;
+  }
+
   .pi-bars:before {
     color: var(--color-white);
   }
@@ -50,7 +62,7 @@
 
   .custom-sidebar {
     background-color: var(--background-color-overlay);
-    width: 25rem !important;
+    width: 28rem !important;
   }
   .p-button.p-button-lg .p-button-icon {
     font-size: 3rem;
@@ -82,7 +94,7 @@
 }
 
 .body {
-  padding: 1rem 1rem;
+  padding: 1rem 0;
   color: var(--color-white);
 }
 
@@ -102,11 +114,17 @@
     align-items: center;
     gap: 1rem;
     padding: 1rem 1rem;
+    margin-top: 1rem;
     color: var(--color-menu-sidebar);
 
     &:hover {
-      background: rgba(194, 202, 235, 0.04);
+      background: var(--background-color-box-sidebar);
       border-radius: 0.5rem;
     }
   }
+}
+
+.active {
+  background: var(--background-color-box-sidebar);
+  border-radius: 0.5rem;
 }

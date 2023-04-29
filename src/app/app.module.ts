@@ -8,9 +8,9 @@ import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomLoader } from './shared/models/custom-loader';
 import { LoadingModule } from './shared/components/loading/loading.module';
-import { NotificationModule } from './shared/components/notification/notification.module';
 import { HttpResponseInterceptor } from './core/interceptors/http-response.interceptor';
 import { LoadingService } from './shared/services/loading.service';
+import { NotificationModule } from './shared/modules/notification.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,8 +19,8 @@ import { LoadingService } from './shared/services/loading.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    LoadingModule,
     NotificationModule,
+    LoadingModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {
