@@ -1,6 +1,6 @@
 import { V2vIProject } from './project.interface';
 
-export interface V2vAction {
+export interface V2vIAction {
   id?: string;
   icon?: string;
   label?: string;
