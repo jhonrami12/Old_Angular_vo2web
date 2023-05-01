@@ -12,7 +12,9 @@
     "google": "Iniciar sesión con Google",
     "facebook": "Iniciar sesión con Facebook",
     "loading": "Cargando...",
-    "placeHolderEmail": "email@ejemplo.com"
+    "placeHolderEmail": "email@ejemplo.com",
+    "emailRequired": "Email requerido: Email@ejemplo.com",
+    "passwordRequired": "Contraseña requerida"
   },
   "dashboard": {
     "projectName": "Nombre Proyecto",

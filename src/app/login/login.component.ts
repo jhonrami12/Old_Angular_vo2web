@@ -15,6 +15,10 @@ export class LoginComponent {
     return this.formLogin.get('email');
   }
 
+  get invalidPassword() {
+    return this.formLogin.get('password');
+  }
+
   constructor(
     private fb: FormBuilder,
     private router: Router,

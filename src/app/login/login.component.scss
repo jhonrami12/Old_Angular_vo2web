@@ -79,7 +79,7 @@ a {
   &__social {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 }
 
@@ -126,4 +126,9 @@ a {
       color: var(--color-white);
     }
   }
+}
+
+.invalid {
+  color: red;
+  font-size: var(--font-size-12);
 }

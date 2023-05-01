@@ -38,6 +38,11 @@
           />
           <label htmlFor="email">{{ "core.email" | translate }}</label>
         </span>
+        <small
+          *ngIf="invalidEmail.touched && invalidEmail.invalid"
+          [ngClass]="{ invalid: invalidEmail.touched && invalidEmail.invalid }"
+          >{{ "core.emailRequired" | translate }}</small
+        >
         <span class="p-input-icon-left p-float-label">
           <i class="pi pi-lock"></i>
           <input
@@ -45,9 +50,20 @@
             id="password"
             type="password"
             pInputText
+            [ngClass]="{
+              'ng-invalid ng-dirty':
+                invalidPassword.touched && invalidPassword.invalid
+            }"
           />
           <label htmlFor="password">{{ "core.password" | translate }}</label>
         </span>
+        <small
+          *ngIf="invalidPassword.touched && invalidPassword.invalid"
+          [ngClass]="{
+            invalid: invalidPassword.touched && invalidPassword.invalid
+          }"
+          >{{ "core.passwordRequired" | translate }}</small
+        >
         <p-button
           type="submit"
           styleClass="p-button-raised button-login"

@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { MenuItem } from 'primeng/api';
-import { Subject, takeUntil } from 'rxjs';
+import { Subject } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -20,16 +20,13 @@ export class ListProjectsComponent implements OnDestroy, OnInit {
     this.setMenuFilter();
   }
 
-  ngOnInit(): void {
-    this.translateChange();
-  }
+  ngOnInit(): void {}
 
   ngOnDestroy(): void {
     this.unsubscribe.next();
   }
 
   addNewFolder() {
-    console.log(this.toast);
     this.toast.success('Hello world!', 'Toastr fun!');
   }
 
@@ -51,13 +48,5 @@ export class ListProjectsComponent implements OnDestroy, OnInit {
         ],
       },
     ];
-  }
-
-  private translateChange() {
-    this.translateService.onLangChange
-      .pipe(takeUntil(this.unsubscribe))
-      .subscribe(() => {
-        this.setMenuFilter();
-      });
   }
 }

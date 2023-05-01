@@ -12,7 +12,9 @@
     "google": "Log in with Google",
     "facebook": "Log in with Facebook",
     "loading": "Loading...",
-    "placeHolderEmail": "email@example.com"
+    "placeHolderEmail": "Email@example.com",
+    "emailRequired": "Email required: Email@example.com",
+    "passwordRequired": "Password required"
   },
   "dashboard": {
     "projectName": "Project Name",

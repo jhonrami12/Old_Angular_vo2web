@@ -11,12 +11,13 @@
     display: flex;
     gap: 1rem;
     align-items: center;
+    justify-content: center;
 
     &__info {
       display: grid;
       text-align: center;
       color: var(--color-menu-sidebar);
-      font-size: var(--font-size-12);
+      font-size: var(--font-size-secondary);
       line-height: 1.5;
     }
   }
@@ -46,6 +47,7 @@
   gap: 1rem;
   align-items: center;
   justify-content: center;
+  font-size: var(--font-size-secondary);
   img {
     width: 3rem;
   }

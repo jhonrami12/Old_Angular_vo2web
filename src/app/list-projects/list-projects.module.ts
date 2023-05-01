@@ -4,7 +4,7 @@ import { ListProjectsComponent } from './list-projects.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PrimengModule } from '../shared/modules/primeng.module';
 import { CustomTranslateModule } from '../shared/modules/translate.module';
-import { ProjectModule } from '../project/project.module';
+import { ProjectModule } from './components/project/project.module';
 
 const routes: Routes = [
   {

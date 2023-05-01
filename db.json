@@ -1,0 +1,97 @@
+{
+  "projects": [
+    {
+      "uid": "1",
+      "uidUser": 1,
+      "name": "Proyecto de prueba 1",
+      "description": "description del proyecto 1",
+      "originSrc": "url del video blob storage public",
+      "renderedSrc": "URL del video renderizado",
+      "completedAudioSrc": "Url de Audio completo merged.",
+      "hasTranscribe": true,
+      "hasTranslation": true,
+      "hasDubbling": false,
+      "mediaType": "audio",
+      "isArchived": false,
+      "isRemoved": false,
+      "audioBackgroud": {
+        "src": "Url del audio del Backgroud",
+        "valumen": "54"
+      },
+      "localeOrigin": "en-US",
+      "localeTarget": "es-ES",
+      "speakerVoices": [
+        {
+          "speaker": 1,
+          "speakerVoiceUID": "UID voz de Jorge"
+        },
+        {
+          "speaker": "2",
+          "speakerVoiceUID": "UID voz de Alicia"
+        }
+      ]
+    },
+    {
+      "uid": "2",
+      "uidUser": 1,
+      "name": "Proyecto de prueba 1",
+      "description": "description del proyecto 1",
+      "originSrc": "url del video blob storage public",
+      "renderedSrc": "URL del video renderizado",
+      "completedAudioSrc": "Url de Audio completo merged.",
+      "hasTranscribe": true,
+      "hasTranslation": false,
+      "hasDubbling": true,
+      "mediaType": "audio",
+      "isRemoved": false,
+      "isArchived": false,
+      "audioBackgroud": {
+        "src": "Url del audio del Backgroud",
+        "valumen": "54"
+      },
+      "localeOrigin": "en-US",
+      "localeTarget": "es-ES",
+      "speakerVoices": [
+        {
+          "speaker": 1,
+          "speakerVoiceUID": "UID voz de Jorge"
+        },
+        {
+          "speaker": "2",
+          "speakerVoiceUID": "UID voz de Alicia"
+        }
+      ]
+    },
+    {
+      "uid": "3",
+      "uidUser": 1,
+      "name": "Proyecto de prueba 1",
+      "description": "description del proyecto 1",
+      "originSrc": "url del video blob storage public",
+      "renderedSrc": "URL del video renderizado",
+      "completedAudioSrc": "Url de Audio completo merged.",
+      "hasTranscribe": false,
+      "hasTranslation": true,
+      "hasDubbling": false,
+      "isArchived": false,
+      "isRemoved": false,
+      "mediaType": "video",
+      "audioBackgroud": {
+        "src": "Url del audio del Backgroud",
+        "valumen": "54"
+      },
+      "localeOrigin": "en-US",
+      "localeTarget": "es-ES",
+      "speakerVoices": [
+        {
+          "speaker": 1,
+          "speakerVoiceUID": "UID voz de Jorge"
+        },
+        {
+          "speaker": "2",
+          "speakerVoiceUID": "UID voz de Alicia"
+        }
+      ]
+    }
+  ]
+}

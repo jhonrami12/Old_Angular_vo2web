@@ -12,10 +12,10 @@ html {
 
 body {
   margin: 0;
-  font-family: var(--font-family-main);
+  font-family: var(--font-family-title-secondary);
   font-size: 1.6rem;
   line-height: 1.8;
-  background-color: var(--background-color);
+  background-color: var(--background-color-body);
 }
 
 a {
@@ -54,6 +54,17 @@ img {
 .p-input-icon-left {
   display: flex;
 }
+
+/*
+.p-input-icon-left > i {
+  top: 38%;
+}
+
+.p-float-label label {
+  top: 38%;
+}
+
+*/
 
 .p-inputtext {
   padding: 1rem 0.75rem;
