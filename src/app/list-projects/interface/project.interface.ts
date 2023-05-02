@@ -6,6 +6,13 @@ export interface V2vIProject {
   originSrc?: string;
   renderedSrc?: string;
   completedAudioSrc?: string;
+  hasTranscribe?: boolean;
+  hasTranslation?: boolean;
+  hasDubbling?: boolean;
+  folder: string;
+  isArchived: boolean;
+  isRemoved: boolean;
+  mediaType: string;
   audioBackgroud?: V2vIAudioBackground;
   localeOrigin?: string;
   localeTarget?: string;

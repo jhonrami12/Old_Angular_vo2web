@@ -1,0 +1,31 @@
+<p-card *ngIf="project">
+  <ng-template pTemplate="header">
+    <div class="header">
+      <img alt="project" src="../../assets/img/imagen-project-prueba.PNG" />
+      <div class="tags">
+        <div
+          class="tags__tag"
+          *ngFor="let tag of project.tags"
+          [pTooltip]="tag.label"
+        >
+          <img [src]="tag.icon" />
+        </div>
+      </div>
+      <div class="actions"></div>
+    </div>
+  </ng-template>
+
+  <div class="body">
+    <div class="body__info">
+      <h2 class="body__info--title">{{ project.name }}</h2>
+      <small class="body__info--description">{{ project.description }}</small>
+      <small class="body__info--date">Last edited: 10/02/23</small>
+    </div>
+    <p-speedDial
+      [model]="items"
+      direction="down"
+      showIcon="pi pi-bars"
+      hideIcon="pi pi-times"
+    ></p-speedDial>
+  </div>
+</p-card>

@@ -11,7 +11,7 @@
     </div>
   </ng-template>
   <ng-template pTemplate="end">
-    <div class="options">
+    <div *ngIf="showOptions" class="options">
       <div class="options__buttons">
         <p-button
           [ngClass]="{ activeSubmenu: currentPage === menu.page }"
@@ -52,6 +52,17 @@
           <img [src]="item.img" />
           <span>{{ item.label }}</span>
         </li>
+        <div *ngIf="!showOptions">
+          <li
+            class="list__item"
+            [ngClass]="{ active: currentPage === item.page }"
+            *ngFor="let item of itemsMenu"
+            (click)="navigate(item)"
+          >
+            <img [src]="item.imgWhite" />
+            <span>{{ item.label }}</span>
+          </li>
+        </div>
       </ul>
     </div>
   </ng-template>

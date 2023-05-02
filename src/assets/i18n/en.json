@@ -26,7 +26,11 @@
     "help": "Help",
     "documentation": "Documentation",
     "questions": "Questions",
-    "pricing": "Pricing"
+    "pricing": "Pricing",
+    "viewFolder": "View as",
+    "viewAsCard": "Card",
+    "viewAsList": "List",
+    "viewAsFolder": "Folder"
   },
   "project": {
     "edit": "Edit",
@@ -35,6 +39,7 @@
     "rename": "Rename",
     "archive": "Archive",
     "copy": "Copy",
-    "delete": "Delete"
+    "delete": "Delete",
+    "properties": "Configuration"
   }
 }

@@ -11,6 +11,7 @@
       "hasTranscribe": true,
       "hasTranslation": true,
       "hasDubbling": false,
+      "folder": "YouTube",
       "mediaType": "audio",
       "isArchived": false,
       "isRemoved": false,
@@ -43,6 +44,7 @@
       "hasTranslation": false,
       "hasDubbling": true,
       "mediaType": "audio",
+      "folder": "YouTube",
       "isRemoved": false,
       "isArchived": false,
       "audioBackgroud": {
@@ -75,7 +77,72 @@
       "hasDubbling": false,
       "isArchived": false,
       "isRemoved": false,
+      "folder": "Instagram",
       "mediaType": "video",
+      "audioBackgroud": {
+        "src": "Url del audio del Backgroud",
+        "valumen": "54"
+      },
+      "localeOrigin": "en-US",
+      "localeTarget": "es-ES",
+      "speakerVoices": [
+        {
+          "speaker": 1,
+          "speakerVoiceUID": "UID voz de Jorge"
+        },
+        {
+          "speaker": "2",
+          "speakerVoiceUID": "UID voz de Alicia"
+        }
+      ]
+    },
+    {
+      "uid": "4",
+      "uidUser": 1,
+      "name": "Proyecto de prueba 1",
+      "description": "description del proyecto 1",
+      "originSrc": "url del video blob storage public",
+      "renderedSrc": "URL del video renderizado",
+      "completedAudioSrc": "Url de Audio completo merged.",
+      "hasTranscribe": false,
+      "hasTranslation": true,
+      "hasDubbling": false,
+      "folder": "Instagram",
+      "isArchived": false,
+      "isRemoved": false,
+      "mediaType": "video",
+      "audioBackgroud": {
+        "src": "Url del audio del Backgroud",
+        "valumen": "54"
+      },
+      "localeOrigin": "en-US",
+      "localeTarget": "es-ES",
+      "speakerVoices": [
+        {
+          "speaker": 1,
+          "speakerVoiceUID": "UID voz de Jorge"
+        },
+        {
+          "speaker": "2",
+          "speakerVoiceUID": "UID voz de Alicia"
+        }
+      ]
+    },
+    {
+      "uid": "4",
+      "uidUser": 1,
+      "name": "Proyecto de prueba 1",
+      "description": "description del proyecto 1",
+      "originSrc": "url del video blob storage public",
+      "renderedSrc": "URL del video renderizado",
+      "completedAudioSrc": "Url de Audio completo merged.",
+      "hasTranscribe": false,
+      "hasTranslation": true,
+      "hasDubbling": false,
+      "isArchived": false,
+      "isRemoved": false,
+      "mediaType": "video",
+      "folder": "Others",
       "audioBackgroud": {
         "src": "Url del audio del Backgroud",
         "valumen": "54"

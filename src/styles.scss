@@ -87,13 +87,20 @@ img {
 }
 
 .container {
-  margin: 3rem 1rem;
+  //margin: 3rem 1rem;
+  padding: 0 5rem;
   border-radius: 0.5rem;
+}
+
+@media (max-width: 280px) {
+  .container {
+    padding: 0 1rem;
+  }
 }
 
 @media (min-width: 768px) {
   .container {
-    margin: 0 6rem;
+    padding: 0 6rem;
   }
 }
 

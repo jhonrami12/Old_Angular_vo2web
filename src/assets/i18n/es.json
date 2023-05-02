@@ -26,15 +26,17 @@
     "help": "Ayuda",
     "documentation": "Documentación",
     "questions": "Preguntas",
-    "pricing": "Precios"
+    "pricing": "Precios",
+    "viewFolder": "Ver cómo"
   },
   "project": {
-    "edit": "Edit",
-    "preview": "Preview",
-    "download": "Download",
-    "rename": "Rename",
-    "archive": "Archive",
-    "copy": "Copy",
-    "delete": "Delete"
+    "edit": "Editar",
+    "preview": "Visualizar",
+    "download": "Descargar",
+    "rename": "Renombrar",
+    "archive": "Archivar",
+    "copy": "Copiar",
+    "delete": "Eliminar",
+    "properties": "Configuración"
   }
 }

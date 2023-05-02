@@ -1,0 +1,7 @@
+<div class="projects">
+  <app-card-project
+    *ngFor="let project of projectsDefinition.projects"
+    [project]="project"
+    [actions]="projectsDefinition.actions"
+  ></app-card-project>
+</div>

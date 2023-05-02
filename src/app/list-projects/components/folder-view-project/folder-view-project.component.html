@@ -1,0 +1,20 @@
+<div class="folders">
+  <div
+    class="folder"
+    *ngFor="let folder of foldersGroupedKeys"
+    (click)="selectFolder(folder)"
+  >
+    <span>{{ folder }}</span>
+    <img [src]="currentFolder === folder ? iconFolderOpen : iconFolderClosed" />
+  </div>
+</div>
+<div class="folder-projects" *ngIf="showFolders">
+  <span>{{ currentFolder }}</span>
+  <div class="projects">
+    <app-card-project
+      *ngFor="let project of currentProjects"
+      [project]="project"
+      [actions]="projectsDefinition.actions"
+    ></app-card-project>
+  </div>
+</div>

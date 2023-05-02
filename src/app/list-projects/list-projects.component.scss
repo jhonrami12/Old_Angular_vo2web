@@ -1,16 +1,62 @@
 :host {
   .submenu {
     display: flex;
-    margin: 0.5rem 0;
   }
 
-  .folder {
-    width: 3rem;
-    cursor: pointer;
+  .folders {
     display: flex;
+
+    .p-button.p-button-text {
+      padding: 0;
+    }
+
+    img {
+      width: 2rem;
+    }
   }
 
   ::ng-deep {
+    .folders {
+      .p-speeddial {
+        position: unset;
+
+        .pi {
+          font-size: 1.5rem;
+        }
+
+        .p-button {
+          background-color: var(--color-white);
+          color: var(--background-color-overlay);
+          border: none;
+        }
+
+        .p-button:focus {
+          box-shadow: none;
+        }
+
+        .p-speeddial-button.p-button.p-button-icon-only .p-button-icon {
+          font-size: 2rem;
+        }
+
+        .p-button:enabled:hover {
+          background: var(--background-color-overlay);
+          color: var(--color-white);
+          border: none;
+        }
+
+        .p-speeddial-action {
+          color: var(--background-color-overlay);
+          background-color: var(--color-white);
+          border: 1px solid var(--background-color-overlay);
+        }
+
+        .p-speeddial-action:hover {
+          color: var(--color-white);
+          background-color: var(--background-color-overlay);
+        }
+      }
+    }
+
     .p-menubar .p-menuitem-link .p-menuitem-icon {
       font-size: 2rem;
     }
@@ -27,8 +73,7 @@
 
     .subnav {
       background-color: var(--color-white);
-      margin: 1rem 6rem;
-      padding: 0.5rem 1rem;
+      margin-top: 1rem;
     }
 
     .search {
@@ -61,7 +106,6 @@
         grid-template-areas:
           "first second"
           "third third";
-        margin: 0 1rem;
         .p-menubar-start {
           grid-area: first;
           width: 100%;
@@ -78,23 +122,18 @@
     }
   }
 
-  .projects {
+  .custom-overlay {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-    margin-top: 2rem;
-    box-sizing: border-box;
-  }
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: none;
+    border-radius: 0.5rem;
+    padding: 1rem 0;
 
-  @media (min-width: 768px) {
-    .projects {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-
-  @media (max-width: 375px) {
-    .projects {
-      grid-template-columns: repeat(1, 1fr);
+    span {
+      color: var(--background-color-overlay);
+      font-size: var(--font-size-12);
+      margin-left: 0.5rem;
     }
   }
 }

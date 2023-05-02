@@ -1,0 +1,22 @@
+.folders {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5rem, 10rem));
+  gap: 4rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: var(--color-white);
+  border-radius: 1rem;
+
+  .folder {
+    cursor: pointer;
+  }
+}
+
+.folder-projects {
+  margin-top: 1rem;
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 25rem));
+    gap: 4rem;
+  }
+}

@@ -1,0 +1,10 @@
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+  gap: 4rem;
+  margin-top: 2rem;
+  box-sizing: border-box;
+  padding: 1rem;
+  background-color: var(--color-white);
+  border-radius: 1rem;
+}

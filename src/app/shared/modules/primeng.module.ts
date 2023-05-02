@@ -14,7 +14,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { AvatarModule } from 'primeng/avatar';
 import { OverlayModule } from 'primeng/overlay';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
-
+import { SpeedDialModule } from 'primeng/speeddial';
 @NgModule({
   declarations: [],
   imports: [
@@ -26,6 +26,7 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
     PasswordModule,
     ProgressBarModule,
     SidebarModule,
+    SpeedDialModule,
     MenubarModule,
     MenuModule,
     DividerModule,
@@ -43,6 +44,7 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
     ProgressBarModule,
     SidebarModule,
     MenubarModule,
+    SpeedDialModule,
     MenuModule,
     DividerModule,
     TooltipModule,

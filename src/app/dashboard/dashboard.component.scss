@@ -1,132 +1,131 @@
-:host {
-  .sidebar {
-    display: flex;
-    align-items: center;
-    margin: 0 2rem;
+.sidebar {
+  display: flex;
+  align-items: center;
+  margin: 0 2rem;
+}
+
+.options {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 2rem;
+    margin-right: 0.5rem;
   }
 
+  &__buttons {
+    display: grid;
+    align-items: center;
+    background-color: var(--color-white);
+    border-radius: 0.5rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__button {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 376px) {
   .options {
     display: flex;
     align-items: center;
-
-    img {
-      width: 2rem;
-      margin-right: 0.5rem;
-    }
-
     &__buttons {
-      display: grid;
+      display: flex;
       align-items: center;
-      background-color: var(--color-white);
-      border-radius: 0.5rem;
-      width: 100%;
-      text-align: center;
-    }
-
-    &__button {
-      display: flex;
+      padding: 0.5rem 0.5rem;
     }
   }
+}
 
-  @media screen and (min-width: 376px) {
-    .options {
-      &__buttons {
-        display: flex;
-        align-items: center;
-        padding: 0.5rem 0.5rem;
-      }
-    }
+::ng-deep {
+  .activeSubmenu {
+    background: var(--color-menu-sidebar);
+    border-radius: 0.5rem;
   }
 
-  ::ng-deep {
-    .activeSubmenu {
-      background: var(--color-menu-sidebar);
-      border-radius: 0.5rem;
-    }
-
-    .p-sidebar-header {
-      background: var(--background-color-box-sidebar);
-      margin: 1rem;
-      border-radius: 1rem;
-    }
-
-    .pi-bars:before {
-      color: var(--color-white);
-    }
-
-    .nav.nav {
-      display: flex;
-      justify-content: space-between;
-      background-color: var(--background-color-overlay);
-      border-radius: 0;
-    }
-
-    .custom-sidebar {
-      background-color: var(--background-color-overlay);
-      width: 28rem !important;
-    }
-    .p-button.p-button-lg .p-button-icon {
-      font-size: 3rem;
-    }
-
-    .p-menubar {
-      background-color: var(--background-color);
-    }
-
-    @media (max-width: 768px) {
-      .nav.nav {
-        display: grid;
-        justify-content: center;
-      }
-      .nav .p-menubar-end {
-        margin: 1rem 0 !important;
-      }
-    }
-
-    @media (min-width: 768px) {
-      .nav .p-menubar-start {
-        margin-left: 3rem;
-      }
-
-      .nav .p-menubar-end {
-        margin: 0 5rem;
-      }
-    }
+  .p-sidebar-header {
+    background: var(--background-color-box-sidebar);
+    margin: 1rem;
+    border-radius: 1rem;
   }
 
-  .body {
-    padding: 1rem 0;
+  .pi-bars:before {
     color: var(--color-white);
   }
 
-  .list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  .nav.nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--background-color-overlay);
+    border-radius: 0;
+  }
 
-    img {
-      width: 2rem;
+  .custom-sidebar {
+    background-color: var(--background-color-overlay);
+    width: 28rem !important;
+  }
+  .p-button.p-button-lg .p-button-icon {
+    font-size: 3rem;
+  }
+
+  .p-menubar {
+    background-color: var(--background-color);
+  }
+
+  @media (max-width: 768px) {
+    .nav.nav {
+      display: grid;
     }
-
-    &__item {
-      font-family: var();
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem 1rem;
-      margin-top: 1rem;
-      color: var(--color-menu-sidebar);
-
-      &:hover {
-        background: var(--background-color-box-sidebar);
-        border-radius: 0.5rem;
-      }
+    .nav .p-menubar-end {
+      margin: 1rem 0 !important;
     }
   }
 
-  .active {
-    background: var(--background-color-box-sidebar);
-    border-radius: 0.5rem;
+  @media (min-width: 768px) {
+    .nav .p-menubar-start {
+      margin-left: 3rem;
+    }
+
+    .nav .p-menubar-end {
+      margin: 0 5rem;
+    }
   }
+}
+
+.body {
+  padding: 1rem 0;
+  color: var(--color-white);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  img {
+    width: 2rem;
+  }
+
+  &__item {
+    font-family: var();
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1rem;
+    margin-top: 1rem;
+    color: var(--color-menu-sidebar);
+
+    &:hover {
+      background: var(--background-color-box-sidebar);
+      border-radius: 0.5rem;
+    }
+  }
+}
+
+.active {
+  background: var(--background-color-box-sidebar);
+  border-radius: 0.5rem;
 }

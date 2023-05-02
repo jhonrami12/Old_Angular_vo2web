@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProjectComponent } from './project.component';
 import { PrimengModule } from '../../../shared/modules/primeng.module';
 import { CustomTranslateModule } from '../../../shared/modules/translate.module';
+import { CardProjectComponent } from '../card-project/card-project.component';
 
 @NgModule({
-  declarations: [ProjectComponent],
+  declarations: [CardProjectComponent],
   imports: [CommonModule, PrimengModule, CustomTranslateModule],
-  exports: [ProjectComponent],
+  exports: [CardProjectComponent],
 })
-export class ProjectModule {}
+export class CardProjectModule {}

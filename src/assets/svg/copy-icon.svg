@@ -1,14 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg width="800px" height="800px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-  <title>copy-file-solid</title>
-  <g id="Layer_2" data-name="Layer 2">
-    <g id="invisible_box" data-name="invisible box">
-      <rect width="48" height="48" fill="none"/>
-      <rect width="48" height="48" fill="none"/>
-    </g>
-    <g id="icons_Q2" data-name="icons Q2">
-      <path d="M44,44V10a2,2,0,0,0-2-2H40V42H10v2a2,2,0,0,0,2,2H42A2,2,0,0,0,44,44Zm-8-8V4a2,2,0,0,0-2-2H6A2,2,0,0,0,4,4V36a2,2,0,0,0,2,2H34A2,2,0,0,0,36,36ZM18,30H14a2,2,0,0,1,0-4h4a2,2,0,0,1,0,4Zm8-8H14a2,2,0,0,1,0-4H26a2,2,0,0,1,0,4Zm0-8H14a2,2,0,0,1,0-4H26a2,2,0,0,1,0,4Z"/>
-    </g>
-  </g>
-</svg>
+<svg height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="m4.00029246 4.08524952-.00029246 6.41475048c0 1.3254834 1.03153594 2.4100387 2.33562431 2.4946823l.16437569.0053177 4.4143985.000703c-.2061166.5822289-.7615518.999297-1.4143985.999297h-3.5c-1.65685425 0-3-1.3431458-3-3v-5.5c0-.65321869.41754351-1.20891488 1.00029246-1.41475048zm7.49970754-2.08524952c.8284271 0 1.5.67157288 1.5 1.5v7c0 .8284271-.6715729 1.5-1.5 1.5h-5c-.82842712 0-1.5-.6715729-1.5-1.5v-7c0-.82842712.67157288-1.5 1.5-1.5z" fill="#253159"/></svg>
