@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { V2vHomeComponent } from './home.component';
+import { V2vSpeedDialComponent } from './speed-dial.component';
 
-describe('HomeComponent', () => {
-  let component: V2vHomeComponent;
-  let fixture: ComponentFixture<V2vHomeComponent>;
+describe('SpeedDialComponent', () => {
+  let component: V2vSpeedDialComponent;
+  let fixture: ComponentFixture<V2vSpeedDialComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [V2vHomeComponent],
+      declarations: [V2vSpeedDialComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(V2vHomeComponent);
+    fixture = TestBed.createComponent(V2vSpeedDialComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

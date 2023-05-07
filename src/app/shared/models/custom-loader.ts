@@ -3,7 +3,7 @@ import { TranslateLoader } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-export class CustomLoader implements TranslateLoader {
+export class V2vLoader implements TranslateLoader {
   constructor(private http: HttpClient) {}
 
   getTranslation(langCountry: string): Observable<any> {

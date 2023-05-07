@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserComponent } from './user.component';
-import { PrimengModule } from '../shared/modules/primeng.module';
+import { V2vUserComponent } from './user.component';
+import { V2vPrimengModule } from '../shared/modules/primeng.module';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
-  declarations: [UserComponent],
+  declarations: [V2vUserComponent],
   imports: [
     CommonModule,
-    PrimengModule,
+    V2vPrimengModule,
     NgCircleProgressModule.forRoot({
       radius: 100,
       outerStrokeWidth: 16,
@@ -18,6 +18,6 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
       animationDuration: 300,
     }),
   ],
-  exports: [UserComponent],
+  exports: [V2vUserComponent],
 })
-export class UserModule {}
+export class V2vUserModule {}

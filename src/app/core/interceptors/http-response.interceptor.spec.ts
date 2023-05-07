@@ -1,17 +1,17 @@
 import { TestBed } from '@angular/core/testing';
 
-import { HttpResponseInterceptor } from './http-response.interceptor';
+import { V2vHttpResponseInterceptor } from './http-response.interceptor';
 
 describe('HttpResponseInterceptor', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
-      providers: [HttpResponseInterceptor],
+      providers: [V2vHttpResponseInterceptor],
     })
   );
 
   it('should be created', () => {
-    const interceptor: HttpResponseInterceptor = TestBed.inject(
-      HttpResponseInterceptor
+    const interceptor: V2vHttpResponseInterceptor = TestBed.inject(
+      V2vHttpResponseInterceptor
     );
     expect(interceptor).toBeTruthy();
   });

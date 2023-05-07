@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
-import { CustomLoader } from '../models/custom-loader';
+import { V2vLoader } from '../models/custom-loader';
 
 @NgModule({
   declarations: [],
@@ -12,11 +12,11 @@ import { CustomLoader } from '../models/custom-loader';
       defaultLanguage: 'en',
       loader: {
         provide: TranslateLoader,
-        useClass: CustomLoader,
+        useClass: V2vLoader,
         deps: [HttpClient],
       },
     }),
   ],
   exports: [TranslateModule],
 })
-export class CustomTranslateModule {}
+export class V2vTranslateModule {}

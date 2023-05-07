@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListViewProjectComponent } from './list-view-project.component';
+import { V2vListViewProjectComponent } from './list-view-project.component';
 
 describe('ListViewProjectComponent', () => {
-  let component: ListViewProjectComponent;
-  let fixture: ComponentFixture<ListViewProjectComponent>;
+  let component: V2vListViewProjectComponent;
+  let fixture: ComponentFixture<V2vListViewProjectComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListViewProjectComponent ]
-    })
-    .compileComponents();
+      declarations: [V2vListViewProjectComponent],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(ListViewProjectComponent);
+    fixture = TestBed.createComponent(V2vListViewProjectComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

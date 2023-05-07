@@ -7,11 +7,11 @@ import { BreadCrumb } from '../../models/bread-crumb-model';
 import { MenuItem } from 'primeng/api';
 
 @Component({
-  selector: 'app-bread-crumb',
+  selector: 'v2v-bread-crumb',
   templateUrl: './bread-crumb.component.html',
   styleUrls: ['./bread-crumb.component.scss'],
 })
-export class BreadCrumbComponent implements OnDestroy {
+export class V2vBreadCrumbComponent implements OnDestroy {
   @Output()
   onItemSelected: EventEmitter<string> = new EventEmitter<string>();
   breadCrumbs$: Observable<BreadCrumb[]>;

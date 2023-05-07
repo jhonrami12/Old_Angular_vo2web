@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LangComponent } from './lang.component';
+import { V2vLangComponent } from './lang.component';
 
 describe('LangComponent', () => {
-  let component: LangComponent;
-  let fixture: ComponentFixture<LangComponent>;
+  let component: V2vLangComponent;
+  let fixture: ComponentFixture<V2vLangComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LangComponent ]
-    })
-    .compileComponents();
+      declarations: [V2vLangComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LangComponent);
+    fixture = TestBed.createComponent(V2vLangComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

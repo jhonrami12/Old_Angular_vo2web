@@ -6,9 +6,9 @@ import { AppRoutingModule } from './app-rounting.module';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
-import { CustomLoader } from './shared/models/custom-loader';
-import { LoadingModule } from './shared/components/loading/loading.module';
-import { HttpResponseInterceptor } from './core/interceptors/http-response.interceptor';
+import { V2vLoader } from './shared/models/custom-loader';
+import { V2vLoadingModule } from './shared/components/loading/loading.module';
+import { V2vHttpResponseInterceptor } from './core/interceptors/http-response.interceptor';
 import { LoadingService } from './shared/services/loading.service';
 import { NotificationModule } from './shared/modules/notification.module';
 
@@ -20,12 +20,12 @@ import { NotificationModule } from './shared/modules/notification.module';
     BrowserAnimationsModule,
     HttpClientModule,
     NotificationModule,
-    LoadingModule,
+    V2vLoadingModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {
         provide: TranslateLoader,
-        useClass: CustomLoader,
+        useClass: V2vLoader,
         deps: [HttpClient],
       },
     }),
@@ -33,7 +33,7 @@ import { NotificationModule } from './shared/modules/notification.module';
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: HttpResponseInterceptor,
+      useClass: V2vHttpResponseInterceptor,
       multi: true,
       deps: [LoadingService],
     },

@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserAccountComponent } from './user-account.component';
+import { V2vUserAccountComponent } from './user-account.component';
 import { Route, RouterModule } from '@angular/router';
 
 const routes: Route[] = [
   {
     path: '',
-    component: UserAccountComponent,
+    component: V2vUserAccountComponent,
   },
 ];
 
 @NgModule({
-  declarations: [UserAccountComponent],
+  declarations: [V2vUserAccountComponent],
   imports: [CommonModule, RouterModule.forChild(routes)],
-  exports: [UserAccountComponent],
+  exports: [V2vUserAccountComponent],
 })
-export class UserAccountModule {}
+export class V2vUserAccountModule {}

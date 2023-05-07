@@ -7,37 +7,6 @@
     .p-speeddial {
       left: 80%;
       top: 10%;
-
-      .pi {
-        font-size: 1.5rem;
-      }
-
-      .p-button {
-        background-color: var(--color-white);
-        color: var(--background-color-overlay);
-        border: none;
-      }
-
-      .p-speeddial-button.p-button.p-button-icon-only .p-button-icon {
-        font-size: 2.3rem;
-      }
-
-      .p-button:enabled:hover {
-        background: var(--background-color-overlay);
-        color: var(--color-white);
-        border: none;
-      }
-
-      .p-speeddial-action {
-        color: var(--background-color-overlay);
-        background-color: var(--color-white);
-        border: 1px solid var(--background-color-overlay);
-      }
-
-      .p-speeddial-action:hover {
-        color: var(--color-white);
-        background-color: var(--background-color-overlay);
-      }
     }
 
     .p-card .p-card-content {

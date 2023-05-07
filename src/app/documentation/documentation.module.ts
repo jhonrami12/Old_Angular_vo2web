@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DocumentationComponent } from './documentation.component';
+import { V2vDocumentationComponent } from './documentation.component';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
     path: '',
-    component: DocumentationComponent,
+    component: V2vDocumentationComponent,
   },
 ];
 
 @NgModule({
-  declarations: [DocumentationComponent],
+  declarations: [V2vDocumentationComponent],
   imports: [CommonModule, RouterModule.forChild(routes)],
-  exports: [DocumentationComponent],
+  exports: [V2vDocumentationComponent],
 })
-export class DocumentationModule {}
+export class V2vDocumentationModule {}

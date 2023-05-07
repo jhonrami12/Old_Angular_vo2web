@@ -11,10 +11,10 @@
 <div class="folder-projects" *ngIf="showFolders">
   <span>{{ currentFolder }}</span>
   <div class="projects">
-    <app-card-project
+    <v2v-card-project
       *ngFor="let project of currentProjects"
       [project]="project"
       [actions]="projectsDefinition.actions"
-    ></app-card-project>
+    ></v2v-card-project>
   </div>
 </div>

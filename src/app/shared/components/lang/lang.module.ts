@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LangComponent } from './lang.component';
+import { V2vLangComponent } from './lang.component';
 import { TranslateService } from '@ngx-translate/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PrimengModule } from '../../modules/primeng.module';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
-  declarations: [LangComponent],
-  imports: [CommonModule, PrimengModule, FormsModule, ReactiveFormsModule],
-  exports: [LangComponent],
+  declarations: [V2vLangComponent],
+  imports: [CommonModule, DropdownModule, FormsModule, ReactiveFormsModule],
+  exports: [V2vLangComponent],
   providers: [TranslateService],
 })
-export class LangModule {}
+export class V2vLangModule {}

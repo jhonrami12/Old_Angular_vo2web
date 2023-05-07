@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FolderViewProjectComponent } from './folder-view-project.component';
+import { V2vFolderViewProjectComponent } from './folder-view-project.component';
 
 describe('FolderViewProjectComponent', () => {
-  let component: FolderViewProjectComponent;
-  let fixture: ComponentFixture<FolderViewProjectComponent>;
+  let component: V2vFolderViewProjectComponent;
+  let fixture: ComponentFixture<V2vFolderViewProjectComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FolderViewProjectComponent ]
-    })
-    .compileComponents();
+      declarations: [V2vFolderViewProjectComponent],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(FolderViewProjectComponent);
+    fixture = TestBed.createComponent(V2vFolderViewProjectComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

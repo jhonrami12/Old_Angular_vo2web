@@ -1,32 +1,33 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ListProjectsComponent } from './list-projects.component';
+import { V2vListProjectsComponent } from './list-projects.component';
 import { RouterModule, Routes } from '@angular/router';
-import { PrimengModule } from '../shared/modules/primeng.module';
-import { CustomTranslateModule } from '../shared/modules/translate.module';
-import { CardViewProjectModule } from './components/card-view-project/card-view-project.module';
-import { ListViewProjectModule } from './components/list-view-project/list-view-project.module';
-import { FolderViewProjectModule } from './components/folder-view-project/folder-view-project.module';
-import { CardProjectComponent } from './components/card-project/card-project.component';
+import { V2vPrimengModule } from '../shared/modules/primeng.module';
+import { V2vTranslateModule } from '../shared/modules/translate.module';
+import { V2vCardViewProjectModule } from './components/card-view-project/card-view-project.module';
+import { V2vListViewProjectModule } from './components/list-view-project/list-view-project.module';
+import { V2vFolderViewProjectModule } from './components/folder-view-project/folder-view-project.module';
+import { V2vSpeedDialModule } from '../shared/components/speed-dial/speed-dial.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: ListProjectsComponent,
+    component: V2vListProjectsComponent,
   },
 ];
 
 @NgModule({
-  declarations: [ListProjectsComponent],
+  declarations: [V2vListProjectsComponent],
   imports: [
     CommonModule,
-    CustomTranslateModule,
-    CardViewProjectModule,
-    ListViewProjectModule,
-    FolderViewProjectModule,
-    PrimengModule,
+    V2vTranslateModule,
+    V2vCardViewProjectModule,
+    V2vListViewProjectModule,
+    V2vSpeedDialModule,
+    V2vFolderViewProjectModule,
+    V2vPrimengModule,
     RouterModule.forChild(routes),
   ],
-  exports: [ListProjectsComponent],
+  exports: [V2vListProjectsComponent],
 })
-export class ListProjectsModule {}
+export class V2vListProjectsModule {}

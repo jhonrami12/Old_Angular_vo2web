@@ -40,6 +40,9 @@
     "archive": "Archive",
     "copy": "Copy",
     "delete": "Delete",
-    "properties": "Configuration"
+    "properties": "Configuration",
+    "name": "Folder/Name",
+    "description": "Description",
+    "mediaType": "Media Type"
   }
 }

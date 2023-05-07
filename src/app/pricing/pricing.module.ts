@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PricingComponent } from './pricing.component';
+import { V2vPricingComponent } from './pricing.component';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
     path: '',
-    component: PricingComponent,
+    component: V2vPricingComponent,
   },
 ];
 
 @NgModule({
-  declarations: [PricingComponent],
+  declarations: [V2vPricingComponent],
   imports: [CommonModule, RouterModule.forChild(routes)],
-  exports: [PricingComponent],
+  exports: [V2vPricingComponent],
 })
-export class PricingModule {}
+export class V2vPricingModule {}

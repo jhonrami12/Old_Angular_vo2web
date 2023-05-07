@@ -3,11 +3,11 @@ import { TranslateService } from '@ngx-translate/core';
 import { Flag } from '../../models/flag.model';
 
 @Component({
-  selector: 'app-lang',
+  selector: 'v2v-lang',
   templateUrl: './lang.component.html',
   styleUrls: ['./lang.component.scss'],
 })
-export class LangComponent implements OnInit {
+export class V2vLangComponent implements OnInit {
   flags: Flag[] = [
     {
       id: 1,

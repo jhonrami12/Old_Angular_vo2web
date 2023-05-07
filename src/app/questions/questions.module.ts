@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { QuestionsComponent } from './questions.component';
+import { V2vQuestionsComponent } from './questions.component';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
     path: '',
-    component: QuestionsComponent,
+    component: V2vQuestionsComponent,
   },
 ];
 
 @NgModule({
-  declarations: [QuestionsComponent],
+  declarations: [V2vQuestionsComponent],
   imports: [CommonModule, RouterModule.forChild(routes)],
-  exports: [QuestionsComponent],
+  exports: [V2vQuestionsComponent],
 })
-export class QuestionsModule {}
+export class V2vQuestionsModule {}

@@ -37,6 +37,9 @@
     "archive": "Archivar",
     "copy": "Copiar",
     "delete": "Eliminar",
-    "properties": "Configuración"
+    "properties": "Configuración",
+    "name": "Carpeta/Nombre",
+    "description": "Descripción",
+    "mediaType": "Tipo"
   }
 }

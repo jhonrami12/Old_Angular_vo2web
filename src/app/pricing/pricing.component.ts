@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-pricing',
+  selector: 'v2v-pricing',
   templateUrl: './pricing.component.html',
-  styleUrls: ['./pricing.component.scss']
+  styleUrls: ['./pricing.component.scss'],
 })
-export class PricingComponent {
-
-}
+export class V2vPricingComponent {}

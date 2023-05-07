@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-user-account',
+  selector: 'v2v-user-account',
   templateUrl: './user-account.component.html',
-  styleUrls: ['./user-account.component.scss']
+  styleUrls: ['./user-account.component.scss'],
 })
-export class UserAccountComponent {
-
-}
+export class V2vUserAccountComponent {}

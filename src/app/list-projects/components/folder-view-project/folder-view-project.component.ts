@@ -4,11 +4,11 @@ import * as _ from 'lodash';
 import { V2vIProject } from '../../interface/project.interface';
 
 @Component({
-  selector: 'app-folder-view-project',
+  selector: 'v2v-folder-view-project',
   templateUrl: './folder-view-project.component.html',
   styleUrls: ['./folder-view-project.component.scss'],
 })
-export class FolderViewProjectComponent implements OnInit {
+export class V2vFolderViewProjectComponent implements OnInit {
   @Input() projectsDefinition: V2vIProjectDefinition;
   foldersGrouped: any;
   foldersGroupedKeys: string[];

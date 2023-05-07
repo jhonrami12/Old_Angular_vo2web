@@ -3,30 +3,31 @@ import { TranslateService } from '@ngx-translate/core';
 import { MenuItem } from 'primeng/api';
 import { Subject } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
-import { ProjectService } from './services/project.service';
+import { V2vProjectService } from './services/project.service';
 import { V2vIProjectDefinition } from './interface/projects-definition.interface';
 import getButton from '../shared/functions/get-button';
 import { V2vIProject } from './interface/project.interface';
 import { V2vIAction } from '../shared/interface/action.interface';
+import { V2VISpeedDialDefinition } from '../shared/interface/speed-dial-interface';
 
 @Component({
-  selector: 'app-list-projects',
+  selector: 'v2v-list-projects',
   templateUrl: './list-projects.component.html',
   styleUrls: ['./list-projects.component.scss'],
 })
-export class ListProjectsComponent implements OnDestroy, OnInit {
+export class V2vListProjectsComponent implements OnDestroy, OnInit {
   items: MenuItem[];
   itemsView: MenuItem[] = [];
   unsubscribe: Subject<void> = new Subject();
   overlayVisible: boolean = false;
   viewType = 'card';
-
+  speedialDefinition: V2VISpeedDialDefinition;
   projectsDefinition: V2vIProjectDefinition;
 
   constructor(
     private translateService: TranslateService,
     private toast: ToastrService,
-    private projectService: ProjectService
+    private projectService: V2vProjectService
   ) {
     this.setMenuFilter();
   }
@@ -58,7 +59,7 @@ export class ListProjectsComponent implements OnDestroy, OnInit {
     const folderButton = getButton('folder');
     const cardButton = getButton('card');
 
-    this.itemsView = [
+    const items = [
       {
         icon: cardButton.icon,
         command: () => {
@@ -90,6 +91,13 @@ export class ListProjectsComponent implements OnDestroy, OnInit {
         },
       },
     ];
+
+    this.speedialDefinition = {
+      items,
+      direction: 'left',
+      hideIcon: 'pi pi-times',
+      showIcon: 'pi pi-eye',
+    };
   }
 
   private getActions(): V2vIAction[] {

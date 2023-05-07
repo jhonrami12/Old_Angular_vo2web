@@ -13,86 +13,25 @@
     </ng-template>
     <ng-template pTemplate="end">
       <div class="folders">
-        <p-speedDial
-          [model]="itemsView"
-          direction="left"
-          showIcon="pi pi-eye"
-          hideIcon="pi pi-times"
-          pTooltip="{{ 'dashboard.viewFolder' | translate }}"
-        ></p-speedDial>
-        <!-- <p-button
-          styleClass="p-button-text"
-          (click)="overlayVisible = !overlayVisible"
-          pTooltip="{{ 'dashboard.viewFolder' | translate }}"
-        >
-          <img
-            tooltipPosition="left"
-            src="../../assets/svg/view-folder-icon.svg"
-          />
-        </p-button>
-        <p-overlay [(visible)]="overlayVisible">
-          <div class="custom-overlay">
-            <p-button
-              (click)="viewType = 'card'"
-              styleClass="p-button-text"
-              pTooltip="{{ 'dashboard.viewAsCard' | translate }}"
-            >
-              <img
-                tooltipPosition="left"
-                src="../../assets/svg/view-card-icon.svg"
-              />
-              <span>{{ "dashboard.viewAsCard" | translate }}</span>
-            </p-button>
-            <p-button
-              (click)="viewType = 'list'"
-              styleClass="p-button-text"
-              pTooltip="{{ 'dashboard.viewAsList' | translate }}"
-            >
-              <img
-                tooltipPosition="left"
-                src="../../assets/svg/view-list-icon.svg"
-              />
-              <span>{{ "dashboard.viewAsList" | translate }}</span>
-            </p-button>
-            <p-button
-              (click)="viewType = 'folder'"
-              styleClass="p-button-text"
-              pTooltip="{{ 'dashboard.viewAsFolder' | translate }}"
-            >
-              <img
-                tooltipPosition="left"
-                src="../../assets/svg/folder-icon.svg"
-              />
-              <span>{{ "dashboard.viewAsFolder" | translate }}</span>
-            </p-button>
-          </div>
-        </p-overlay>
-        <p-button
-          styleClass="p-button-text"
-          (click)="addNewFolder()"
-          pTooltip="{{ 'dashboard.addFolder' | translate }}"
-        >
-          <img
-            tooltipPosition="left"
-            src="../../assets/svg/add-new-project.svg"
-          />
-        </p-button>-->
+        <v2v-speed-dial
+          [V2vSpeedDialDefinition]="speedialDefinition"
+        ></v2v-speed-dial>
       </div>
     </ng-template>
   </p-menubar>
-  <app-card-view
+  <v2v-card-view
     *ngIf="projectsDefinition && viewType === 'card'"
     [projectsDefinition]="projectsDefinition"
-  ></app-card-view>
+  ></v2v-card-view>
 
-  <app-folder-view-project
+  <v2v-folder-view-project
     *ngIf="projectsDefinition && viewType === 'folder'"
     [projectsDefinition]="projectsDefinition"
   >
-  </app-folder-view-project>
+  </v2v-folder-view-project>
 
-  <app-list-view-project
+  <v2v-list-view-project
     *ngIf="projectsDefinition && viewType === 'list'"
     [projectsDefinition]="projectsDefinition"
-  ></app-list-view-project>
+  ></v2v-list-view-project>
 </div>

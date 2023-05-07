@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProjectComponent } from './card-view-project.component';
+import { V2vCardViewProjectComponent } from './card-view-project.component';
 
-describe('ProjectComponent', () => {
-  let component: ProjectComponent;
-  let fixture: ComponentFixture<ProjectComponent>;
+describe('V2vCardViewProjectComponent', () => {
+  let component: V2vCardViewProjectComponent;
+  let fixture: ComponentFixture<V2vCardViewProjectComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ProjectComponent],
+      declarations: [V2vCardViewProjectComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ProjectComponent);
+    fixture = TestBed.createComponent(V2vCardViewProjectComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

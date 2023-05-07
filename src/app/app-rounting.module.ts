@@ -5,17 +5,17 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () =>
-      import('./login/login.module').then((m) => m.LoginModule),
+      import('./login/login.module').then((m) => m.V2vLoginModule),
   },
   {
     path: 'register',
     loadChildren: () =>
-      import('./register/register.module').then((m) => m.RegisterModule),
+      import('./register/register.module').then((m) => m.V2vRegisterModule),
   },
   {
     path: 'dashboard',
     loadChildren: () =>
-      import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
+      import('./dashboard/dashboard.module').then((m) => m.V2vDashboardModule),
   },
   {
     path: '',

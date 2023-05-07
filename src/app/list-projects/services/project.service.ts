@@ -8,7 +8,7 @@ import getTag from 'src/app/shared/functions/get-tags';
 @Injectable({
   providedIn: 'root',
 })
-export class ProjectService {
+export class V2vProjectService {
   private URL: string;
 
   constructor(private apiService: ApiService) {

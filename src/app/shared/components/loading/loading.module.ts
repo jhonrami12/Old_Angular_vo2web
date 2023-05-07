@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoadingComponent } from './loading.component';
-import { PrimengModule } from '../../modules/primeng.module';
-import { CustomTranslateModule } from '../../modules/translate.module';
+import { V2vLoadingComponent } from './loading.component';
+import { V2vTranslateModule } from '../../modules/translate.module';
+import { ProgressBarModule } from 'primeng/progressbar';
 
 @NgModule({
-  declarations: [LoadingComponent],
-  imports: [CommonModule, PrimengModule, CustomTranslateModule],
-  exports: [LoadingComponent],
+  declarations: [V2vLoadingComponent],
+  imports: [CommonModule, ProgressBarModule, V2vTranslateModule],
+  exports: [V2vLoadingComponent],
 })
-export class LoadingModule {}
+export class V2vLoadingModule {}

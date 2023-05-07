@@ -21,11 +21,8 @@
       <small class="body__info--description">{{ project.description }}</small>
       <small class="body__info--date">Last edited: 10/02/23</small>
     </div>
-    <p-speedDial
-      [model]="items"
-      direction="down"
-      showIcon="pi pi-bars"
-      hideIcon="pi pi-times"
-    ></p-speedDial>
+    <v2v-speed-dial
+      [V2vSpeedDialDefinition]="speedialDefinition"
+    ></v2v-speed-dial>
   </div>
 </p-card>

@@ -27,9 +27,9 @@
   </ng-template>
 </p-menubar>
 
-<app-bread-crumb (onItemSelected)="onSelectedUser($event)"></app-bread-crumb>
+<v2v-bread-crumb (onItemSelected)="onSelectedUser($event)"></v2v-bread-crumb>
 <router-outlet></router-outlet>
-<app-home *ngIf="showHome"></app-home>
+<v2v-home *ngIf="showHome"></v2v-home>
 
 <p-sidebar [(visible)]="sidebarVisible" styleClass="custom-sidebar">
   <ng-template pTemplate="header">
@@ -67,6 +67,6 @@
     </div>
   </ng-template>
   <ng-template pTemplate="footer">
-    <app-user (onSelected)="onSelectedUser($event)"></app-user>
+    <v2v-user (onSelected)="onSelectedUser($event)"></v2v-user>
   </ng-template>
 </p-sidebar>

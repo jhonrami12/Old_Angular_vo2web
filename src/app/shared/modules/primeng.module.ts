@@ -15,6 +15,8 @@ import { AvatarModule } from 'primeng/avatar';
 import { OverlayModule } from 'primeng/overlay';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { SpeedDialModule } from 'primeng/speeddial';
+import { TreeTableModule } from 'primeng/treetable';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -34,6 +36,7 @@ import { SpeedDialModule } from 'primeng/speeddial';
     TooltipModule,
     OverlayModule,
     BreadcrumbModule,
+    TreeTableModule,
   ],
   exports: [
     CardModule,
@@ -51,6 +54,7 @@ import { SpeedDialModule } from 'primeng/speeddial';
     AvatarModule,
     OverlayModule,
     BreadcrumbModule,
+    TreeTableModule,
   ],
 })
-export class PrimengModule {}
+export class V2vPrimengModule {}

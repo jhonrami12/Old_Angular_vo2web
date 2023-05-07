@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BreadCrumbComponent } from './bread-crumb.component';
+import { V2vBreadCrumbComponent } from './bread-crumb.component';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 
 @NgModule({
-  declarations: [BreadCrumbComponent],
+  declarations: [V2vBreadCrumbComponent],
   imports: [CommonModule, BreadcrumbModule],
-  exports: [BreadCrumbComponent],
+  exports: [V2vBreadCrumbComponent],
 })
-export class BreadCrumbModule {}
+export class V2vBreadCrumbModule {}

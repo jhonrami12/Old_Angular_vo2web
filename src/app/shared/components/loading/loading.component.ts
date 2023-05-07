@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { LoadingService } from '../../services/loading.service';
 
 @Component({
-  selector: 'app-loading',
+  selector: 'v2v-loading',
   templateUrl: './loading.component.html',
   styleUrls: ['./loading.component.scss'],
 })
-export class LoadingComponent {
+export class V2vLoadingComponent {
   constructor(public loadingService: LoadingService) {}
 }

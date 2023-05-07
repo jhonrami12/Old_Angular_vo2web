@@ -2,11 +2,11 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-user',
+  selector: 'v2v-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss'],
 })
-export class UserComponent {
+export class V2vUserComponent {
   @Output()
   onSelected: EventEmitter<string> = new EventEmitter<string>();
   overlayVisible: boolean = false;

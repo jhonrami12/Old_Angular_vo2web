@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoadingComponent } from './loading.component';
+import { V2vLoadingComponent } from './loading.component';
 
 describe('LoadingComponent', () => {
-  let component: LoadingComponent;
-  let fixture: ComponentFixture<LoadingComponent>;
+  let component: V2vLoadingComponent;
+  let fixture: ComponentFixture<V2vLoadingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoadingComponent ]
-    })
-    .compileComponents();
+      declarations: [V2vLoadingComponent],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(LoadingComponent);
+    fixture = TestBed.createComponent(V2vLoadingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

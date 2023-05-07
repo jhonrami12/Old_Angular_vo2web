@@ -1,1 +1,69 @@
-<p>list-view-project works!</p>
+<div class="table">
+  <p-treeTable
+    [value]="projectsTreeNode"
+    [columns]="cols"
+    [scrollable]="true"
+    [tableStyle]="{ 'min-width': '100rem' }"
+    (onNodeExpand)="nodeExpand($event)"
+    (onNodeCollapse)="nodeCollapse($event)"
+  >
+    <!--<ng-template pTemplate="caption"> FileViewer </ng-template>-->
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of columns">
+          {{ col.header }}
+        </th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template
+      pTemplate="body"
+      let-rowNode
+      let-rowData="rowData"
+      let-columns="columns"
+    >
+      <tr>
+        <td *ngFor="let col of columns; let i = index">
+          <p-treeTableToggler
+            [rowNode]="rowNode"
+            *ngIf="i === 0"
+          ></p-treeTableToggler>
+          <div
+            class="folder"
+            *ngIf="
+              rowNode.level === 0 &&
+                rowData[col.field] !== '' &&
+                col.field !== 'tags';
+              else elseBlock
+            "
+          >
+            <img [src]="getIcon(rowNode)" />
+            <label>
+              {{ rowData[col.field] }}
+            </label>
+          </div>
+
+          <ng-template #elseBlock>
+            <label *ngIf="col.field !== 'tags'">
+              {{ rowData[col.field] }}
+            </label>
+          </ng-template>
+          <div class="tags" *ngIf="col.field === 'tags'">
+            <div
+              class="tags__tag"
+              *ngFor="let tag of rowData[col.field]"
+              [pTooltip]="tag.label"
+            >
+              <img [src]="tag.icon" />
+            </div>
+          </div>
+        </td>
+        <td *ngIf="rowNode.level !== 0" (click)="setProject(rowData)">
+          <v2v-speed-dial
+            [V2vSpeedDialDefinition]="speedialDefinition"
+          ></v2v-speed-dial>
+        </td>
+      </tr>
+    </ng-template>
+  </p-treeTable>
+</div>

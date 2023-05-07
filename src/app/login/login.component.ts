@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { LoadingService } from '../shared/services/loading.service';
 
 @Component({
-  selector: 'app-login',
+  selector: 'v2v-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent {
+export class V2vLoginComponent {
   formLogin: FormGroup;
 
   get invalidEmail() {

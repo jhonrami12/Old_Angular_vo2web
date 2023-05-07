@@ -11,7 +11,7 @@ import { LoadingService } from '../../shared/services/loading.service';
 @Injectable({
   providedIn: 'root',
 })
-export class HttpResponseInterceptor implements HttpInterceptor {
+export class V2vHttpResponseInterceptor implements HttpInterceptor {
   private requestNumber: number = 0;
 
   constructor(private loadingService: LoadingService) {}

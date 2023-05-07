@@ -3,11 +3,11 @@ import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'v2v-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })
-export class DashboardComponent {
+export class V2vDashboardComponent {
   sidebarVisible: boolean = true;
   showHome: boolean = true;
   currentPage: string;
